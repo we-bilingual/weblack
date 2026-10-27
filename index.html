@@ -116,26 +116,40 @@
 
     .hero-title-block{grid-area:title}
 
+    .hero .tagline{
+      font-size:clamp(18px,1.8vw,24px);
+      margin:10px 0 0;
+      color:#e3e3e3;
+      font-weight:500;
+    }
+
     .hero-logos{
       grid-area:logos;
       display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .hero-logo-chip{
-      display:inline-flex;
       align-items:center;
-      background:#fff;
-      border-radius:14px;
-      padding:9px 14px;
-      box-shadow:0 14px 30px rgba(0,0,0,.28);
+      gap:16px;
+      margin-top:26px;
     }
 
-    .hero-logo-chip img{
-      height:30px;
+    .hero-logo{
+      height:92px;
       width:auto;
       display:block;
+      border-radius:18px;
+      box-shadow:0 18px 38px rgba(0,0,0,.35);
+    }
+
+    .hero-logo--vsp{
+      height:82px;
+    }
+
+    .hero-logo-plus{
+      flex:none;
+      font-family:var(--serif);
+      font-size:34px;
+      font-weight:500;
+      color:#d7d7d7;
+      line-height:1;
     }
 
     .eyebrow{
@@ -160,10 +174,10 @@
 
     .hero h1{
       font-family:var(--serif);
-      font-size:clamp(54px,7vw,92px);
-      line-height:.93;
+      font-size:clamp(44px,5.5vw,74px);
+      line-height:.95;
       margin:0;
-      letter-spacing:-.045em;
+      letter-spacing:-.04em;
       font-weight:500;
     }
 
@@ -861,15 +875,26 @@
       }
 
       .hero h1{
-        font-size:clamp(52px,17vw,78px);
+        font-size:clamp(40px,12vw,58px);
       }
 
-      .hero-logo-chip{
-        padding:7px 11px;
+      .hero-logos{
+        gap:12px;
+        margin-top:20px;
       }
 
-      .hero-logo-chip img{
-        height:24px;
+      .hero-logo{
+        height:25vw;
+        max-height:92px;
+      }
+
+      .hero-logo--vsp{
+        height:22vw;
+        max-height:82px;
+      }
+
+      .hero-logo-plus{
+        font-size:26px;
       }
 
       .hero-actions{
@@ -952,11 +977,13 @@
       <div class="container hero-grid">
         <div class="hero-title-block">
           <h1>WE BLACK</h1>
+          <div class="tagline">Your English starts here.</div>
         </div>
 
-        <div class="hero-logos">
-          <span class="hero-logo-chip"><img src="iql-logo.png" alt="IQL — Inglês em Qualquer Lugar" /></span>
-          <span class="hero-logo-chip"><img src="vsp-logo.png" alt="Viajando sem Perrengue" /></span>
+        <div class="hero-logos" aria-label="IQL e Viajando sem Perrengue">
+          <img class="hero-logo hero-logo--iql" src="iql-logo.png" alt="IQL — Inglês em Qualquer Lugar" />
+          <span class="hero-logo-plus" aria-hidden="true">+</span>
+          <img class="hero-logo hero-logo--vsp" src="vsp-logo.png" alt="Viajando sem Perrengue" />
         </div>
 
         <div class="hero-offer" aria-label="Resumo da promoção">
