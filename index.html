@@ -157,15 +157,19 @@
     }
 
     .hero h1{
+      display:inline-block;
       font-family:var(--serif);
       font-size:clamp(44px,5.5vw,74px);
-      line-height:.95;
+      line-height:1;
       margin:0;
       letter-spacing:-.04em;
       font-weight:500;
+      color:#0a0a0a;
+      background:#fff;
+      padding:.08em .32em .14em;
+      border-radius:10px;
+      box-shadow:0 16px 34px rgba(0,0,0,.4);
     }
-
-    .h1-accent{color:var(--red)}
 
     .hero .tagline{
       font-size:clamp(18px,1.8vw,24px);
@@ -192,9 +196,9 @@
       position:relative;
       display:inline-flex;
       align-items:center;
-      gap:14px;
-      padding:14px 18px;
-      border-radius:22px;
+      gap:18px;
+      padding:20px 26px;
+      border-radius:26px;
       background:linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.015));
       border:1px solid rgba(255,255,255,.1);
     }
@@ -202,22 +206,22 @@
     .hero-logos-wrap::before{
       content:"";
       position:absolute;
-      inset:-22px;
-      background:radial-gradient(circle, rgba(255,255,255,.07), transparent 68%);
+      inset:-26px;
+      background:radial-gradient(circle, rgba(255,255,255,.08), transparent 68%);
       filter:blur(4px);
       z-index:-1;
     }
 
     .hero-logo{
-      height:62px;
+      height:118px;
       width:auto;
       display:block;
-      border-radius:12px;
-      box-shadow:0 14px 28px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.06);
+      border-radius:16px;
+      box-shadow:0 18px 36px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.06);
     }
 
     .hero-logo--vsp{
-      height:56px;
+      height:104px;
     }
 
     .hero-logo-plus{
@@ -652,9 +656,18 @@
       font-weight:600;
     }
 
+    .hotmart-badge{
+      display:inline-flex;
+      align-items:center;
+      flex:none;
+      background:#fff;
+      border-radius:7px;
+      padding:4px 7px;
+    }
+
     .hotmart-logo-img{
       flex:none;
-      height:14px;
+      height:13px;
       width:auto;
       display:block;
     }
@@ -837,12 +850,7 @@
     }
 
     .faq-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:40px;
       margin-bottom:48px;
-      flex-wrap:wrap;
     }
 
     .faq-head h2{
@@ -851,14 +859,6 @@
       margin:0;
       font-weight:500;
       letter-spacing:-.03em;
-    }
-
-    .faq-head-desc{
-      max-width:360px;
-      color:var(--muted);
-      font-size:15.5px;
-      line-height:1.6;
-      margin:0 0 6px;
     }
 
     .faq-body{
@@ -1031,33 +1031,33 @@
       }
 
       .hero h1{
-        font-size:clamp(40px,12vw,58px);
+        font-size:clamp(38px,11vw,54px);
       }
 
       .hero-logos{
-        margin-top:20px;
+        margin-top:22px;
       }
 
       .hero-logos-wrap{
-        gap:10px;
-        padding:12px 14px;
-        border-radius:18px;
+        gap:12px;
+        padding:16px 18px;
+        border-radius:20px;
       }
 
       .hero-logo{
-        height:19vw;
-        max-height:58px;
+        height:28vw;
+        max-height:96px;
       }
 
       .hero-logo--vsp{
-        height:17vw;
-        max-height:52px;
+        height:25vw;
+        max-height:84px;
       }
 
       .hero-logo-plus{
-        width:24px;
-        height:24px;
-        font-size:14px;
+        width:26px;
+        height:26px;
+        font-size:15px;
       }
 
       .hero-actions{
@@ -1118,14 +1118,6 @@
 
       .combo-price{text-align:center}
 
-      .faq-head{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:16px;
-      }
-
-      .faq-head-desc{max-width:none}
-
       .faq-body{
         grid-template-columns:1fr;
       }
@@ -1177,7 +1169,7 @@
       <div class="container hero-grid">
         <div class="hero-title-block">
           <div class="eyebrow">Black Friday</div>
-          <h1>WE <span class="h1-accent">BLACK</span></h1>
+          <h1>WE BLACK</h1>
           <div class="tagline">Your English starts here.</div>
           <p class="hero-impact">Do inglês para a sua rotina ao inglês para as suas viagens.</p>
         </div>
@@ -1294,7 +1286,8 @@
               </div>
 
               <div class="hotmart-line">
-                Pagamento e acesso pela <img src="hotmart-logo.png" alt="Hotmart" class="hotmart-logo-img" />
+                Pagamento e acesso pela
+                <span class="hotmart-badge"><img src="hotmart-logo.png" alt="Hotmart" class="hotmart-logo-img" /></span>
               </div>
 
               <ul class="deal-trust">
@@ -1397,7 +1390,8 @@
               </div>
 
               <div class="hotmart-line">
-                Pagamento e acesso pela <img src="hotmart-logo.png" alt="Hotmart" class="hotmart-logo-img" />
+                Pagamento e acesso pela
+                <span class="hotmart-badge"><img src="hotmart-logo.png" alt="Hotmart" class="hotmart-logo-img" /></span>
               </div>
 
               <ul class="deal-trust">
@@ -1471,14 +1465,8 @@
     <section class="faq" id="duvidas">
       <div class="container">
         <div class="faq-head">
-          <div class="faq-head-text">
-            <div class="eyebrow">Dúvidas</div>
-            <h2>Perguntas frequentes</h2>
-          </div>
-          <p class="faq-head-desc">
-            Reunimos as principais dúvidas sobre a WE BLACK. Se ainda tiver
-            alguma questão, chame a nossa equipe no WhatsApp.
-          </p>
+          <div class="eyebrow">Dúvidas</div>
+          <h2>Perguntas frequentes</h2>
         </div>
 
         <div class="faq-body">
@@ -1486,10 +1474,10 @@
             <details class="faq-item">
               <summary>O que é a We Bilingual?</summary>
               <p>
-                A We Bilingual é uma escola boutique de inglês para adultos, com aulas
-                particulares e personalizadas para quem quer usar o idioma no trabalho,
-                nas viagens e na vida real. Além das aulas individuais, a We Bilingual
-                também oferece cursos digitais para quem busca mais autonomia e quer
+                A We Bilingual é uma <strong>escola boutique de inglês para adultos</strong>,
+                com aulas particulares e personalizadas para quem quer usar o idioma no
+                trabalho, nas viagens e na vida real. Além das aulas individuais, também
+                oferece <em>cursos digitais</em> para quem busca mais autonomia e quer
                 aprender no próprio ritmo, com conteúdo prático e aplicável.
               </p>
             </details>
@@ -1497,27 +1485,27 @@
             <details class="faq-item">
               <summary>Quais cursos a We Bilingual oferece?</summary>
               <p>
-                Na WE BLACK, você encontra dois cursos digitais. O IQL — Inglês em
-                Qualquer Lugar é voltado para quem quer construir e desenvolver sua
+                Na WE BLACK, você encontra <strong>dois cursos digitais</strong>. O
+                <em>IQL — Inglês em Qualquer Lugar</em> é para quem quer construir sua
                 base no inglês, trabalhando vocabulário, compreensão, construção de
-                frases e comunicação. Já o Viajando sem Perrengue é um curso prático
-                para quem quer se preparar para situações reais de uma viagem
-                internacional, como aeroporto, imigração, hotel, restaurante, shopping
-                e transporte. Os cursos podem ser adquiridos separadamente ou no
-                Combo WE BLACK.
+                frases e comunicação. Já o <em>Viajando sem Perrengue</em> é um curso
+                prático para quem quer chegar preparado para as situações reais de uma
+                viagem internacional — aeroporto, imigração, hotel, restaurante,
+                shopping e transporte. Você pode levar um curso separado ou
+                <strong> os dois no Combo WE BLACK</strong>.
               </p>
             </details>
 
             <details class="faq-item">
               <summary>Até quando vai a oferta da WE BLACK?</summary>
               <p>
-                A condição especial da WE BLACK é válida até 30 de novembro. Após a
-                compra, o acesso ao curso é realizado pela Hotmart. O comprador
-                recebe no e-mail utilizado na compra as orientações para acessar o
-                conteúdo. Todas as compras possuem 7 dias de garantia. Caso exista
-                qualquer dúvida sobre o acesso ou sobre a compra, a pessoa também
-                pode entrar em contato diretamente com a equipe da We Bilingual pelo
-                WhatsApp.
+                A condição especial da WE BLACK é válida <strong>até 30 de
+                novembro</strong>. Depois da compra, o acesso é liberado pela Hotmart —
+                você recebe tudo no e-mail usado na compra, com o passo a passo para
+                começar. E pode ficar tranquilo(a): toda compra tem
+                <strong> 7 dias de garantia</strong>. Ficou com alguma dúvida sobre o
+                acesso ou sobre a compra? É só chamar a gente no <em>WhatsApp</em> que
+                te ajudamos rapidinho.
               </p>
             </details>
           </div>
