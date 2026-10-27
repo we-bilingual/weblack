@@ -318,6 +318,12 @@
       min-height:100%;
     }
 
+    .card-title-row{
+      display:flex;
+      align-items:flex-start;
+      gap:8px;
+    }
+
     .card h3{
       font-family:var(--serif);
       font-size:clamp(30px,3vw,42px);
@@ -327,18 +333,85 @@
       letter-spacing:-.03em;
     }
 
+    .info-wrap{
+      position:relative;
+      flex:none;
+      margin-top:10px;
+    }
+
+    .info-btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:19px;
+      height:19px;
+      border-radius:50%;
+      border:1.5px solid var(--muted);
+      background:none;
+      color:var(--muted);
+      font-family:var(--serif);
+      font-style:italic;
+      font-weight:700;
+      font-size:12px;
+      line-height:1;
+      padding:0;
+      cursor:pointer;
+    }
+
+    .info-btn:hover,
+    .info-btn:focus-visible{
+      border-color:var(--text);
+      color:var(--text);
+    }
+
+    .info-tooltip{
+      position:absolute;
+      left:50%;
+      top:calc(100% + 10px);
+      transform:translateX(-50%) translateY(-4px);
+      width:260px;
+      max-width:min(260px, calc(100vw - 32px));
+      background:#101828;
+      border-radius:12px;
+      padding:14px 16px;
+      box-shadow:0 18px 40px rgba(0,0,0,.25);
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+      transition:opacity .15s ease, transform .15s ease, visibility .15s;
+      z-index:30;
+      text-align:left;
+    }
+
+    .info-tooltip strong{
+      display:block;
+      font-size:13px;
+      color:#fff;
+      margin-bottom:6px;
+    }
+
+    .info-tooltip p{
+      margin:0;
+      font-size:12.5px;
+      line-height:1.5;
+      color:#d7d7d7;
+    }
+
+    .info-btn:hover + .info-tooltip,
+    .info-btn:focus-visible + .info-tooltip,
+    .info-wrap.is-open .info-tooltip{
+      opacity:1;
+      visibility:visible;
+      pointer-events:auto;
+      transform:translateX(-50%) translateY(0);
+    }
+
     .card-headline{
       font-size:19px;
       font-weight:800;
       color:var(--red);
-      margin:0 0 12px;
+      margin:0 0 20px;
       letter-spacing:-.01em;
-    }
-
-    .card-sub{
-      color:var(--muted);
-      font-size:15.5px;
-      margin:0 0 22px;
     }
 
     .card-block{
@@ -435,14 +508,76 @@
       font-size:12px;
     }
 
-    .trust-trio-section{
-      max-width:620px;
-      margin:0 auto 44px;
-      padding:16px 0;
+    .receive-block{
+      margin-bottom:16px;
     }
 
-    .trust-trio-section li{
-      font-size:12.5px;
+    .receive-label{
+      display:block;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:800;
+      color:var(--muted);
+      margin-bottom:9px;
+    }
+
+    .receive-list{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:6px 14px;
+      color:#475467;
+      font-size:13px;
+    }
+
+    .receive-list li{
+      position:relative;
+      padding-left:13px;
+    }
+
+    .receive-list li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:7px;
+      width:4px;
+      height:4px;
+      border-radius:50%;
+      background:#98a2b3;
+    }
+
+    .hotmart-line{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:7px;
+      margin-top:14px;
+      font-size:11.5px;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    .hotmart-mark{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:16px;
+      height:16px;
+      border-radius:5px;
+      background:#F04E23;
+      color:#fff;
+      font-size:9.5px;
+      font-weight:900;
+      font-family:var(--sans);
+      flex:none;
+    }
+
+    .hotmart-line strong{
+      color:#344054;
+      font-weight:800;
     }
 
     .price-block{
@@ -858,25 +993,24 @@
           <h2>WE BLACK · <span class="heading-accent">70% OFF</span></h2>
         </div>
 
-        <ul class="trust-trio trust-trio-section">
-          <li>Compra única</li>
-          <li>Acesso vitalício</li>
-          <li>7 dias de garantia</li>
-        </ul>
-
         <div class="cards">
           <article class="card">
-            <h3>IQL — Inglês em Qualquer Lugar</h3>
+            <div class="card-title-row">
+              <h3>IQL — Inglês em Qualquer Lugar</h3>
+              <span class="info-wrap">
+                <button type="button" class="info-btn" aria-expanded="false" aria-label="O que é o IQL?">i</button>
+                <span class="info-tooltip" role="tooltip">
+                  <strong>O que é o IQL?</strong>
+                  <p>Curso online para quem quer construir uma base de inglês e avançar do A1 ao A2, estudando no próprio ritmo e desenvolvendo vocabulário, compreensão e comunicação.</p>
+                </span>
+              </span>
+            </div>
             <p class="card-headline">Do básico à comunicação com mais autonomia.</p>
-            <p class="card-sub">
-              Construa sua base e avance do A1 ao A2 com um caminho organizado
-              para começar a entender e usar o inglês no dia a dia.
-            </p>
 
             <div class="card-block">
               <span class="card-block-label accent">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
-                O que muda no seu inglês
+                Você vai desenvolver
               </span>
               <div class="benefit-grid">
                 <div class="benefit-card">
@@ -893,25 +1027,28 @@
                 </div>
                 <div class="benefit-card">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.4 8.4 0 0 1-4-1L3 20l1.1-4.6a8.4 8.4 0 0 1-1.1-4.2A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>
-                  <strong>Comunicação</strong>
+                  <strong>Comunicação no dia a dia</strong>
                 </div>
               </div>
             </div>
 
-            <div class="card-block">
-              <span class="card-block-label">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
-                O que você recebe
-              </span>
-              <div class="chip-row">
-                <span class="chip">10 módulos</span>
-                <span class="chip">Do A1 ao A2</span>
-                <span class="chip">Aulas gravadas</span>
-                <span class="chip">Materiais de apoio</span>
-              </div>
-            </div>
-
             <div class="price-block">
+              <div class="receive-block">
+                <span class="receive-label">Você recebe</span>
+                <ul class="receive-list">
+                  <li>10 módulos</li>
+                  <li>Conteúdo do A1 ao A2</li>
+                  <li>Aulas gravadas</li>
+                  <li>Materiais de apoio</li>
+                </ul>
+              </div>
+
+              <ul class="trust-trio">
+                <li>Compra única</li>
+                <li>Acesso vitalício</li>
+                <li>7 dias de garantia</li>
+              </ul>
+
               <div class="price-top">
                 <span class="discount-tag">70% OFF</span>
                 <span class="price-old">De R$ 997</span>
@@ -934,22 +1071,32 @@
                 Quero garantir minha oferta →
               </a>
 
+              <div class="hotmart-line">
+                <span class="hotmart-mark">H</span>
+                Pagamento e acesso pela <strong>Hotmart</strong>
+              </div>
+
               <div class="deadline">Oferta válida até 30 de novembro.</div>
             </div>
           </article>
 
           <article class="card">
-            <h3>Viajando sem Perrengue</h3>
+            <div class="card-title-row">
+              <h3>Viajando sem Perrengue</h3>
+              <span class="info-wrap">
+                <button type="button" class="info-btn" aria-expanded="false" aria-label="O que é o Viajando sem Perrengue?">i</button>
+                <span class="info-tooltip" role="tooltip">
+                  <strong>O que é o Viajando sem Perrengue?</strong>
+                  <p>Curso online e prático para quem quer se preparar para situações reais de uma viagem internacional e se comunicar com mais segurança fora do país.</p>
+                </span>
+              </span>
+            </div>
             <p class="card-headline">O inglês que você precisa na sua viagem internacional.</p>
-            <p class="card-sub">
-              Aprenda o que falar e entender nas situações que realmente
-              acontecem fora do país.
-            </p>
 
             <div class="card-block">
-              <span class="card-block-label">
+              <span class="card-block-label accent">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-7.58 7-12a7 7 0 1 0-14 0c0 4.42 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-                Onde você vai usar
+                Você vai praticar situações em
               </span>
               <div class="chip-row">
                 <span class="chip">Aeroporto</span>
@@ -961,45 +1108,23 @@
               </div>
             </div>
 
-            <div class="card-block">
-              <span class="card-block-label accent">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
-                Na prática, você vai aprender a
-              </span>
-              <div class="benefit-grid">
-                <div class="benefit-card">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.3 9.3a2.7 2.7 0 0 1 5.1-1.1c0 2.1-2.4 2.1-2.4 4.1"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
-                  <strong>Pedir informações</strong>
-                </div>
-                <div class="benefit-card">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1z"/><path d="M20 14a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1z"/></svg>
-                  <strong>Entender perguntas comuns</strong>
-                </div>
-                <div class="benefit-card">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 10 4 15l5 5"/><path d="M4 15h11a5 5 0 0 0 5-5V8"/></svg>
-                  <strong>Responder com mais segurança</strong>
-                </div>
-                <div class="benefit-card">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.4 8.4 0 0 1-4-1L3 20l1.1-4.6a8.4 8.4 0 0 1-1.1-4.2A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>
-                  <strong>Resolver sem depender de terceiros</strong>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-block">
-              <span class="card-block-label">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
-                O que você recebe
-              </span>
-              <div class="chip-row">
-                <span class="chip">7 módulos</span>
-                <span class="chip">Situações reais</span>
-                <span class="chip">Conteúdo prático</span>
-                <span class="chip">Estude no seu ritmo</span>
-              </div>
-            </div>
-
             <div class="price-block">
+              <div class="receive-block">
+                <span class="receive-label">Você recebe</span>
+                <ul class="receive-list">
+                  <li>7 módulos</li>
+                  <li>Conteúdo prático</li>
+                  <li>Situações reais de viagem</li>
+                  <li>Estude no seu ritmo</li>
+                </ul>
+              </div>
+
+              <ul class="trust-trio">
+                <li>Compra única</li>
+                <li>Acesso vitalício</li>
+                <li>7 dias de garantia</li>
+              </ul>
+
               <div class="price-top">
                 <span class="discount-tag">70% OFF</span>
                 <span class="price-old">De R$ 297</span>
@@ -1021,6 +1146,11 @@
               >
                 Quero garantir minha oferta →
               </a>
+
+              <div class="hotmart-line">
+                <span class="hotmart-mark">H</span>
+                Pagamento e acesso pela <strong>Hotmart</strong>
+              </div>
 
               <div class="deadline">Oferta válida até 30 de novembro.</div>
             </div>
@@ -1124,5 +1254,40 @@
       </div>
     </section>
   </main>
+
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll('.info-btn');
+
+      function closeAll(except) {
+        buttons.forEach(function (btn) {
+          if (btn !== except) {
+            btn.setAttribute('aria-expanded', 'false');
+            var wrap = btn.closest('.info-wrap');
+            if (wrap) wrap.classList.remove('is-open');
+          }
+        });
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var wrap = btn.closest('.info-wrap');
+          var open = wrap.classList.contains('is-open');
+          closeAll(open ? null : btn);
+          wrap.classList.toggle('is-open', !open);
+          btn.setAttribute('aria-expanded', String(!open));
+        });
+      });
+
+      document.addEventListener('click', function () {
+        closeAll(null);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAll(null);
+      });
+    })();
+  </script>
 </body>
 </html>
