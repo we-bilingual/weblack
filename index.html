@@ -216,7 +216,7 @@
 
     .discount-number{
       font-family:var(--serif);
-      font-size:clamp(76px,9vw,126px);
+      font-size:clamp(84px,10vw,138px);
       line-height:.82;
       color:#fff;
       margin:12px 0 14px;
@@ -273,7 +273,7 @@
 
     .section-heading{
       max-width:820px;
-      margin:0 auto 46px;
+      margin:0 auto 38px;
       text-align:center;
     }
 
@@ -314,15 +314,6 @@
       min-height:100%;
     }
 
-    .card-kicker{
-      color:var(--red);
-      font-size:12px;
-      text-transform:uppercase;
-      font-weight:800;
-      letter-spacing:.16em;
-      margin-bottom:10px;
-    }
-
     .card h3{
       font-family:var(--serif);
       font-size:clamp(30px,3vw,42px);
@@ -351,17 +342,21 @@
     }
 
     .card-block-label{
-      display:block;
+      display:flex;
+      align-items:center;
+      gap:7px;
       font-size:11px;
       text-transform:uppercase;
       letter-spacing:.14em;
       font-weight:800;
       color:var(--muted);
-      margin-bottom:10px;
+      margin-bottom:12px;
     }
 
+    .card-block-label svg{flex:none}
+
     .card-block-label.accent{
-      color:var(--red);
+      color:var(--text);
     }
 
     .benefits{
@@ -386,33 +381,6 @@
       top:0;
       color:#111;
       font-weight:900;
-    }
-
-    .includes{
-      list-style:none;
-      padding:0;
-      margin:0;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:8px 16px;
-      color:#475467;
-      font-size:14px;
-    }
-
-    .includes li{
-      position:relative;
-      padding-left:15px;
-    }
-
-    .includes li::before{
-      content:"";
-      position:absolute;
-      left:0;
-      top:8px;
-      width:5px;
-      height:5px;
-      border-radius:50%;
-      background:#98a2b3;
     }
 
     .chip-row{
@@ -466,7 +434,27 @@
     .price-block{
       margin-top:auto;
       border-top:1px solid var(--line);
-      padding-top:24px;
+      padding-top:22px;
+    }
+
+    .price-top{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:8px;
+    }
+
+    .discount-tag{
+      display:inline-flex;
+      align-items:center;
+      padding:4px 10px;
+      background:var(--red);
+      color:#fff;
+      font-size:11.5px;
+      font-weight:800;
+      letter-spacing:.03em;
+      border-radius:999px;
+      white-space:nowrap;
     }
 
     .price-old{
@@ -475,32 +463,32 @@
       font-size:15px;
     }
 
-    .installments{
+    .price-main{
       display:flex;
       align-items:baseline;
-      gap:8px;
-      margin:6px 0 2px;
+      gap:10px;
+      margin:0 0 4px;
       flex-wrap:wrap;
     }
 
-    .installments .x{
-      color:var(--red);
-      font-weight:900;
-      font-size:16px;
+    .price-main-label{
+      color:var(--muted);
+      font-size:15px;
+      font-weight:600;
     }
 
-    .installments strong{
+    .price-main strong{
       font-family:var(--serif);
-      font-size:clamp(40px,4vw,58px);
+      font-size:clamp(38px,4vw,52px);
       color:var(--red);
       font-weight:500;
-      letter-spacing:-.04em;
+      letter-spacing:-.03em;
     }
 
-    .cash{
+    .price-installments{
       color:#475467;
       margin:0 0 20px;
-      font-size:15px;
+      font-size:14.5px;
     }
 
     .card .btn{
@@ -512,8 +500,8 @@
       text-align:center;
       margin-top:12px;
       font-size:12px;
-      color:#667085;
-      font-weight:700;
+      color:var(--red);
+      font-weight:800;
     }
 
     /* COMBO */
@@ -583,7 +571,84 @@
       border-radius:12px;
     }
 
-    .combo-action .deadline{color:#bdbdbd}
+    .combo-action .deadline{color:#ff8780}
+
+    .combo .trust-trio{
+      grid-column:1 / -1;
+      margin:4px 0 0;
+    }
+
+    .trust-trio.on-dark{
+      border-top-color:rgba(255,255,255,.16);
+      border-bottom-color:rgba(255,255,255,.16);
+    }
+
+    .trust-trio.on-dark li{
+      color:#d7d7d7;
+    }
+
+    .trust-trio.on-dark li::before{
+      color:var(--green);
+    }
+
+    /* FAQ */
+    .faq{
+      background:var(--white);
+      padding:76px 0;
+    }
+
+    .faq-list{
+      max-width:760px;
+      margin:0 auto;
+      border-top:1px solid var(--line);
+    }
+
+    .faq-item{
+      border-bottom:1px solid var(--line);
+    }
+
+    .faq-item summary{
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:22px 2px;
+      font-weight:700;
+      font-size:16.5px;
+      color:var(--text);
+    }
+
+    .faq-item summary::-webkit-details-marker{display:none}
+
+    .faq-item summary::after{
+      content:"+";
+      flex:none;
+      width:26px;
+      height:26px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      font-weight:700;
+      color:var(--muted);
+      border:1px solid var(--line);
+      border-radius:50%;
+      transition:transform .2s ease;
+    }
+
+    .faq-item[open] summary::after{
+      transform:rotate(45deg);
+    }
+
+    .faq-item p{
+      margin:-4px 2px 22px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.6;
+      max-width:620px;
+    }
 
     /* FAQ CTA */
     .final-cta{
@@ -661,7 +726,7 @@
       }
 
       .discount-number{
-        font-size:clamp(72px,24vw,110px);
+        font-size:clamp(76px,26vw,118px);
       }
 
       .cards{
@@ -670,10 +735,6 @@
 
       .card{
         padding:26px;
-      }
-
-      .includes{
-        grid-template-columns:1fr;
       }
 
       .combo{
@@ -697,8 +758,9 @@
       .hero-actions .btn{width:100%}
       .mini-prices{grid-template-columns:1fr}
       .offers{padding:68px 0}
-      .section-heading{margin-bottom:34px}
+      .section-heading{margin-bottom:28px}
       .section-heading p{font-size:16px}
+      .faq{padding:56px 0}
       .final-cta{padding-top:62px}
     }
   </style>
@@ -754,7 +816,7 @@
         <div class="hero-offer" aria-label="Resumo da promoção">
           <div class="discount-box">
             <span class="discount-label">Condição especial de novembro</span>
-            <div class="discount-number">ATÉ <strong>71%</strong> OFF</div>
+            <div class="discount-number"><strong>70%</strong> OFF</div>
             <span class="validity">Oferta válida até 30 de novembro</span>
           </div>
 
@@ -776,12 +838,7 @@
     <section class="offers" id="ofertas">
       <div class="container">
         <div class="section-heading">
-          <div class="eyebrow">Ofertas WE BLACK</div>
-          <h2>Escolha a oferta que faz sentido para o seu momento.</h2>
-          <p>
-            Inglês para construir sua base ou para viajar com mais segurança.
-            Você escolhe como quer começar.
-          </p>
+          <h2>Ofertas WE BLACK</h2>
         </div>
 
         <div class="cards">
@@ -794,7 +851,10 @@
             </p>
 
             <div class="card-block">
-              <span class="card-block-label accent">Você vai desenvolver</span>
+              <span class="card-block-label accent">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+                Você vai desenvolver
+              </span>
               <ul class="benefits">
                 <li>Vocabulário para situações do dia a dia</li>
                 <li>Compreensão do inglês</li>
@@ -804,13 +864,16 @@
             </div>
 
             <div class="card-block">
-              <span class="card-block-label">O que você recebe</span>
-              <ul class="includes">
-                <li>10 módulos</li>
-                <li>Conteúdo do A1 ao A2</li>
-                <li>Aulas gravadas</li>
-                <li>Materiais de apoio</li>
-              </ul>
+              <span class="card-block-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+                O que você recebe
+              </span>
+              <div class="chip-row">
+                <span class="chip">10 módulos</span>
+                <span class="chip">Conteúdo do A1 ao A2</span>
+                <span class="chip">Aulas gravadas</span>
+                <span class="chip">Materiais de apoio</span>
+              </div>
             </div>
 
             <ul class="trust-trio">
@@ -820,14 +883,17 @@
             </ul>
 
             <div class="price-block">
-              <div class="price-old">De R$ 997</div>
-
-              <div class="installments">
-                <span class="x">12x de</span>
-                <strong>R$ 30,72</strong>
+              <div class="price-top">
+                <span class="discount-tag">70% OFF</span>
+                <span class="price-old">De R$ 997</span>
               </div>
 
-              <p class="cash">ou R$ 297 à vista</p>
+              <div class="price-main">
+                <span class="price-main-label">Por apenas</span>
+                <strong>R$ 297</strong>
+              </div>
+
+              <p class="price-installments">ou até 12x de R$ 30,72</p>
 
               <!-- Substitua o href abaixo pelo checkout final da campanha, se houver um link específico da WE BLACK. -->
               <a
@@ -852,17 +918,10 @@
             </p>
 
             <div class="card-block">
-              <span class="card-block-label accent">Você vai aprender a</span>
-              <ul class="benefits">
-                <li>Pedir informações</li>
-                <li>Entender perguntas comuns</li>
-                <li>Responder com mais segurança</li>
-                <li>Resolver situações de viagem sem depender tanto de terceiros</li>
-              </ul>
-            </div>
-
-            <div class="card-block">
-              <span class="card-block-label">Contextos do curso</span>
+              <span class="card-block-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+                Contextos do curso
+              </span>
               <div class="chip-row">
                 <span class="chip">Aeroporto e imigração</span>
                 <span class="chip">Hotel</span>
@@ -873,6 +932,19 @@
               </div>
             </div>
 
+            <div class="card-block">
+              <span class="card-block-label accent">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+                Você vai aprender a
+              </span>
+              <ul class="benefits">
+                <li>Pedir informações</li>
+                <li>Entender perguntas comuns</li>
+                <li>Responder com mais segurança</li>
+                <li>Resolver situações de viagem sem depender tanto de terceiros</li>
+              </ul>
+            </div>
+
             <ul class="trust-trio">
               <li>Compra única</li>
               <li>Acesso vitalício</li>
@@ -880,14 +952,17 @@
             </ul>
 
             <div class="price-block">
-              <div class="price-old">De R$ 297</div>
-
-              <div class="installments">
-                <span class="x">12x de</span>
-                <strong>R$ 9,00</strong>
+              <div class="price-top">
+                <span class="discount-tag">70% OFF</span>
+                <span class="price-old">De R$ 297</span>
               </div>
 
-              <p class="cash">ou R$ 87 à vista</p>
+              <div class="price-main">
+                <span class="price-main-label">Por apenas</span>
+                <strong>R$ 87</strong>
+              </div>
+
+              <p class="price-installments">ou até 12x de R$ 9,00</p>
 
               <!-- Substitua o href abaixo pelo checkout final da campanha, se houver um link específico da WE BLACK. -->
               <a
@@ -906,9 +981,8 @@
 
         <section class="combo" aria-label="Combo WE BLACK">
           <div>
-            <div class="card-kicker">Combo WE BLACK</div>
-            <h3>IQL + Viajando sem Perrengue</h3>
-            <p>Inglês para sua rotina + inglês para suas viagens, em uma única oferta.</p>
+            <h3>Combo WE BLACK</h3>
+            <p>Leve IQL + Viajando sem Perrengue e tenha inglês para sua rotina e para suas viagens.</p>
 
             <div class="save">
               Economize mais <strong>R$ 37</strong>
@@ -917,22 +991,64 @@
 
           <div class="combo-price">
             <span>Combo por</span>
-            <strong>12x de R$ 35,89</strong>
-            <small>ou R$ 347 à vista</small>
+            <strong>R$ 347</strong>
+            <small>ou até 12x de R$ 35,89</small>
           </div>
 
           <div class="combo-action">
             <!-- IMPORTANTE: inserir aqui o link de checkout do combo WE BLACK. -->
             <a class="btn btn-green" href="#" aria-label="Comprar combo WE BLACK">
-              Quero garantir minha oferta →
+              Quero garantir o combo →
             </a>
             <div class="deadline">Oferta válida até 30 de novembro.</div>
           </div>
+
+          <ul class="trust-trio on-dark">
+            <li>Compra única</li>
+            <li>Acesso vitalício</li>
+            <li>7 dias de garantia</li>
+          </ul>
         </section>
       </div>
     </section>
 
-    <section class="final-cta" id="duvidas">
+    <section class="faq" id="duvidas">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Perguntas frequentes</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>O que é a We Bilingual?</summary>
+            <p>
+              A We Bilingual é uma escola de inglês online focada em ensinar de forma
+              prática, no seu ritmo, para você aprender a se comunicar com mais
+              confiança no dia a dia.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Quais cursos a We Bilingual oferece?</summary>
+            <p>
+              Oferecemos o IQL — Inglês em Qualquer Lugar, para construir sua base
+              do A1 ao A2, e o Viajando sem Perrengue, para você se comunicar com
+              segurança durante viagens internacionais.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>A oferta da WE BLACK vai até quando?</summary>
+            <p>
+              A oferta é válida até 30 de novembro e todos os cursos possuem
+              7 dias de garantia.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
       <div class="container">
         <div class="final-box">
           <div class="eyebrow" style="justify-content:center">WE BLACK</div>
