@@ -342,22 +342,41 @@
 
     .card-sub{
       color:var(--muted);
-      font-size:16px;
-      margin:0 0 24px;
+      font-size:15.5px;
+      margin:0 0 22px;
+    }
+
+    .card-block{
+      margin-bottom:18px;
+    }
+
+    .card-block-label{
+      display:block;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-weight:800;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+
+    .card-block-label.accent{
+      color:var(--red);
     }
 
     .benefits{
       list-style:none;
       padding:0;
-      margin:0 0 20px;
+      margin:0;
       display:grid;
-      gap:12px;
+      gap:9px;
       color:#344054;
+      font-size:14.5px;
     }
 
     .benefits li{
       position:relative;
-      padding-left:26px;
+      padding-left:24px;
     }
 
     .benefits li::before{
@@ -369,38 +388,79 @@
       font-weight:900;
     }
 
+    .includes{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px 16px;
+      color:#475467;
+      font-size:14px;
+    }
+
+    .includes li{
+      position:relative;
+      padding-left:15px;
+    }
+
+    .includes li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:8px;
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background:#98a2b3;
+    }
+
+    .chip-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      padding:7px 14px;
+      background:var(--off);
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:12.5px;
+      font-weight:700;
+      color:#344054;
+    }
+
     .trust-trio{
       list-style:none;
       display:flex;
-      padding:14px 6px;
-      margin:0 0 28px;
-      background:var(--off);
-      border:1px solid var(--line);
-      border-radius:14px;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:6px 16px;
+      margin:0 0 24px;
+      padding:13px 0;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
     }
 
     .trust-trio li{
-      flex:1;
-      display:flex;
+      display:inline-flex;
       align-items:center;
-      justify-content:center;
       gap:6px;
-      padding:0 8px;
-      text-align:center;
-      font-size:12.5px;
+      font-size:11.5px;
       font-weight:800;
-      color:#344054;
-      letter-spacing:-.01em;
-    }
-
-    .trust-trio li:not(:last-child){
-      border-right:1px solid var(--line);
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      color:#475467;
     }
 
     .trust-trio li::before{
       content:"✓";
       color:var(--green-dark);
       font-weight:900;
+      font-size:12px;
     }
 
     .price-block{
@@ -612,19 +672,8 @@
         padding:26px;
       }
 
-      .trust-trio{
-        flex-direction:column;
-        padding:6px 16px;
-      }
-
-      .trust-trio li{
-        justify-content:flex-start;
-        padding:10px 0;
-      }
-
-      .trust-trio li:not(:last-child){
-        border-right:none;
-        border-bottom:1px solid var(--line);
+      .includes{
+        grid-template-columns:1fr;
       }
 
       .combo{
@@ -740,17 +789,29 @@
             <h3>IQL — Inglês em Qualquer Lugar</h3>
             <p class="card-headline">Do básico à comunicação com mais autonomia.</p>
             <p class="card-sub">
-              10 módulos para construir sua base, ampliar vocabulário e começar a usar
-              o inglês com mais segurança no dia a dia.
+              Construa sua base no inglês e avance do A1 ao A2 com um caminho
+              organizado para estudar no seu ritmo.
             </p>
 
-            <ul class="benefits">
-              <li>10 módulos</li>
-              <li>Do A1 ao A2</li>
-              <li>Amplie seu vocabulário</li>
-              <li>Desenvolva compreensão e comunicação</li>
-              <li>Estude no seu ritmo</li>
-            </ul>
+            <div class="card-block">
+              <span class="card-block-label accent">Você vai desenvolver</span>
+              <ul class="benefits">
+                <li>Vocabulário para situações do dia a dia</li>
+                <li>Compreensão do inglês</li>
+                <li>Construção de frases e comunicação</li>
+                <li>Mais segurança para começar a falar</li>
+              </ul>
+            </div>
+
+            <div class="card-block">
+              <span class="card-block-label">O que você recebe</span>
+              <ul class="includes">
+                <li>10 módulos</li>
+                <li>Conteúdo do A1 ao A2</li>
+                <li>Aulas gravadas</li>
+                <li>Materiais de apoio</li>
+              </ul>
+            </div>
 
             <ul class="trust-trio">
               <li>Compra única</li>
@@ -786,19 +847,31 @@
             <h3>Viajando sem Perrengue</h3>
             <p class="card-headline">O inglês que você precisa para se virar na viagem.</p>
             <p class="card-sub">
-              7 módulos práticos para você se comunicar com mais segurança nas
-              situações que realmente acontecem fora do país.
+              7 módulos práticos para você saber o que falar e entender nas
+              situações mais comuns de uma viagem internacional.
             </p>
 
-            <ul class="benefits">
-              <li>7 módulos</li>
-              <li>Aeroporto e imigração</li>
-              <li>Hotel</li>
-              <li>Restaurante</li>
-              <li>Shopping</li>
-              <li>Transporte</li>
-              <li>Comunicação em situações reais de viagem</li>
-            </ul>
+            <div class="card-block">
+              <span class="card-block-label accent">Você vai aprender a</span>
+              <ul class="benefits">
+                <li>Pedir informações</li>
+                <li>Entender perguntas comuns</li>
+                <li>Responder com mais segurança</li>
+                <li>Resolver situações de viagem sem depender tanto de terceiros</li>
+              </ul>
+            </div>
+
+            <div class="card-block">
+              <span class="card-block-label">Contextos do curso</span>
+              <div class="chip-row">
+                <span class="chip">Aeroporto e imigração</span>
+                <span class="chip">Hotel</span>
+                <span class="chip">Restaurante</span>
+                <span class="chip">Shopping</span>
+                <span class="chip">Transporte</span>
+                <span class="chip">Situações do dia a dia</span>
+              </div>
+            </div>
 
             <ul class="trust-trio">
               <li>Compra única</li>
