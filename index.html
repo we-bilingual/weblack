@@ -103,10 +103,39 @@
 
     .hero-grid{
       display:grid;
-      grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);
-      gap:64px;
+      grid-template-columns:1.1fr .9fr;
+      grid-template-areas:
+        "title offer"
+        "logos offer"
+        "cta offer";
+      column-gap:64px;
+      row-gap:20px;
       align-items:center;
-      padding:80px 0 88px;
+      padding:76px 0 84px;
+    }
+
+    .hero-title-block{grid-area:title}
+
+    .hero-logos{
+      grid-area:logos;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .hero-logo-chip{
+      display:inline-flex;
+      align-items:center;
+      background:#fff;
+      border-radius:14px;
+      padding:9px 14px;
+      box-shadow:0 14px 30px rgba(0,0,0,.28);
+    }
+
+    .hero-logo-chip img{
+      height:30px;
+      width:auto;
+      display:block;
     }
 
     .eyebrow{
@@ -138,26 +167,12 @@
       font-weight:500;
     }
 
-    .hero .tagline{
-      font-size:clamp(22px,2.2vw,32px);
-      margin:14px 0 0;
-      color:#f3f3f3;
-      font-weight:500;
-    }
-
-    .hero-copy{
-      margin:28px 0 0;
-      max-width:620px;
-      color:#d7d7d7;
-      font-size:18px;
-    }
-
     .hero-actions{
+      grid-area:cta;
       display:flex;
       align-items:center;
       gap:18px;
       flex-wrap:wrap;
-      margin-top:34px;
     }
 
     .btn{
@@ -193,9 +208,7 @@
     }
 
     .hero-offer{
-      display:grid;
-      gap:18px;
-      align-content:center;
+      grid-area:offer;
     }
 
     .discount-box{
@@ -238,32 +251,6 @@
       font-size:15px;
     }
 
-    .mini-prices{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-
-    .mini-price{
-      border:1px solid rgba(255,255,255,.12);
-      background:#0d0d0d;
-      border-radius:18px;
-      padding:18px 20px;
-    }
-
-    .mini-price span{
-      display:block;
-      color:#bdbdbd;
-      font-size:12px;
-      margin-bottom:5px;
-    }
-
-    .mini-price strong{
-      font-family:var(--serif);
-      font-size:26px;
-      font-weight:500;
-      color:#fff;
-    }
 
     /* OFFERS */
     .offers{
@@ -569,20 +556,17 @@
       align-items:center;
       justify-content:center;
       gap:7px;
-      margin-top:14px;
+      margin:0 0 18px;
       font-size:11.5px;
       color:var(--muted);
       font-weight:600;
     }
 
-    .hotmart-line svg{
+    .hotmart-logo-img{
       flex:none;
-    }
-
-    .hotmart-word{
-      font-weight:800;
-      color:#0d3b4c;
-      letter-spacing:-.01em;
+      height:15px;
+      width:auto;
+      display:block;
     }
 
     .price-block{
@@ -867,18 +851,38 @@
 
       .hero-grid{
         grid-template-columns:1fr;
-        gap:38px;
-        padding:60px 0 64px;
+        grid-template-areas:
+          "title"
+          "logos"
+          "offer"
+          "cta";
+        gap:20px;
+        padding:44px 0 36px;
       }
 
       .hero h1{
         font-size:clamp(52px,17vw,78px);
       }
 
-      .hero-copy{font-size:16px}
+      .hero-logo-chip{
+        padding:7px 11px;
+      }
+
+      .hero-logo-chip img{
+        height:24px;
+      }
+
+      .hero-actions{
+        margin-top:4px;
+      }
+
+      .hero .btn{
+        min-height:48px;
+        padding:12px 22px;
+      }
 
       .discount-box{
-        padding:28px;
+        padding:24px;
       }
 
       .discount-number{
@@ -946,28 +950,13 @@
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Black Friday</div>
-
+        <div class="hero-title-block">
           <h1>WE BLACK</h1>
-          <div class="tagline">Your English starts here.</div>
+        </div>
 
-          <p class="hero-copy">
-            Dois cursos completos para você aprender inglês de forma prática,
-            no seu ritmo e com foco no que realmente importa.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-green" href="#ofertas">Quero ver as ofertas →</a>
-            <a
-              class="btn btn-line"
-              href="https://wa.me/5544988271830?text=Ol%C3%A1%21%20Vim%20pela%20WE%20BLACK%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20cursos."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Falar no WhatsApp
-            </a>
-          </div>
+        <div class="hero-logos">
+          <span class="hero-logo-chip"><img src="iql-logo.png" alt="IQL — Inglês em Qualquer Lugar" /></span>
+          <span class="hero-logo-chip"><img src="vsp-logo.png" alt="Viajando sem Perrengue" /></span>
         </div>
 
         <div class="hero-offer" aria-label="Resumo da promoção">
@@ -976,18 +965,18 @@
             <div class="discount-number"><strong>70%</strong> OFF</div>
             <span class="validity">Oferta válida até 30 de novembro</span>
           </div>
+        </div>
 
-          <div class="mini-prices">
-            <div class="mini-price">
-              <span>IQL — Inglês em Qualquer Lugar</span>
-              <strong>R$ 297</strong>
-            </div>
-
-            <div class="mini-price">
-              <span>Viajando sem Perrengue</span>
-              <strong>R$ 87</strong>
-            </div>
-          </div>
+        <div class="hero-actions">
+          <a class="btn btn-green" href="#ofertas">Quero ver as ofertas →</a>
+          <a
+            class="btn btn-line"
+            href="https://wa.me/5544988271830?text=Ol%C3%A1%21%20Vim%20pela%20WE%20BLACK%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20cursos."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Falar no WhatsApp
+          </a>
         </div>
       </div>
     </section>
@@ -1053,12 +1042,6 @@
                 </ul>
               </div>
 
-              <ul class="trust-trio">
-                <li>Compra única</li>
-                <li>Acesso vitalício</li>
-                <li>7 dias de garantia</li>
-              </ul>
-
               <div class="price-top">
                 <span class="discount-tag">70% OFF</span>
                 <span class="price-old">De R$ 997</span>
@@ -1071,6 +1054,16 @@
 
               <p class="price-installments">ou 12x de R$ 30,72</p>
 
+              <div class="hotmart-line">
+                Pagamento e acesso pela <img src="hotmart-logo.png" alt="Hotmart" class="hotmart-logo-img" />
+              </div>
+
+              <ul class="trust-trio">
+                <li>Compra única</li>
+                <li>Acesso vitalício</li>
+                <li>7 dias de garantia</li>
+              </ul>
+
               <a
                 class="btn btn-green"
                 href="https://pay.hotmart.com/M70985834E?off=61xdndtz&bid=1793126647629"
@@ -1079,13 +1072,6 @@
               >
                 Quero garantir minha oferta →
               </a>
-
-              <div class="hotmart-line">
-                <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="#F15A24" fill-rule="evenodd" clip-rule="evenodd" d="M12 2C9 6 6 9 6 14a6 6 0 0 0 12 0C18 9 15 6 12 2zm0 10.4a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8z"/></svg>
-                Pagamento e acesso pela <span class="hotmart-word">hotmart</span>
-              </div>
-
-              <div class="deadline">Oferta válida até 30 de novembro.</div>
             </div>
           </article>
 
@@ -1129,12 +1115,6 @@
                 </ul>
               </div>
 
-              <ul class="trust-trio">
-                <li>Compra única</li>
-                <li>Acesso vitalício</li>
-                <li>7 dias de garantia</li>
-              </ul>
-
               <div class="price-top">
                 <span class="discount-tag">70% OFF</span>
                 <span class="price-old">De R$ 297</span>
@@ -1147,6 +1127,16 @@
 
               <p class="price-installments">ou 12x de R$ 9,00</p>
 
+              <div class="hotmart-line">
+                Pagamento e acesso pela <img src="hotmart-logo.png" alt="Hotmart" class="hotmart-logo-img" />
+              </div>
+
+              <ul class="trust-trio">
+                <li>Compra única</li>
+                <li>Acesso vitalício</li>
+                <li>7 dias de garantia</li>
+              </ul>
+
               <a
                 class="btn btn-green"
                 href="https://pay.hotmart.com/S81341382M"
@@ -1155,13 +1145,6 @@
               >
                 Quero garantir minha oferta →
               </a>
-
-              <div class="hotmart-line">
-                <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="#F15A24" fill-rule="evenodd" clip-rule="evenodd" d="M12 2C9 6 6 9 6 14a6 6 0 0 0 12 0C18 9 15 6 12 2zm0 10.4a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8z"/></svg>
-                Pagamento e acesso pela <span class="hotmart-word">hotmart</span>
-              </div>
-
-              <div class="deadline">Oferta válida até 30 de novembro.</div>
             </div>
           </article>
         </div>
