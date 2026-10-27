@@ -332,6 +332,14 @@
       letter-spacing:-.03em;
     }
 
+    .card-headline{
+      font-size:19px;
+      font-weight:800;
+      color:var(--text);
+      margin:0 0 12px;
+      letter-spacing:-.01em;
+    }
+
     .card-sub{
       color:var(--muted);
       font-size:16px;
@@ -341,7 +349,7 @@
     .benefits{
       list-style:none;
       padding:0;
-      margin:0 0 28px;
+      margin:0 0 20px;
       display:grid;
       gap:12px;
       color:#344054;
@@ -358,6 +366,40 @@
       left:0;
       top:0;
       color:#111;
+      font-weight:900;
+    }
+
+    .trust-trio{
+      list-style:none;
+      display:flex;
+      padding:14px 6px;
+      margin:0 0 28px;
+      background:var(--off);
+      border:1px solid var(--line);
+      border-radius:14px;
+    }
+
+    .trust-trio li{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      padding:0 8px;
+      text-align:center;
+      font-size:12.5px;
+      font-weight:800;
+      color:#344054;
+      letter-spacing:-.01em;
+    }
+
+    .trust-trio li:not(:last-child){
+      border-right:1px solid var(--line);
+    }
+
+    .trust-trio li::before{
+      content:"✓";
+      color:var(--green-dark);
       font-weight:900;
     }
 
@@ -570,6 +612,21 @@
         padding:26px;
       }
 
+      .trust-trio{
+        flex-direction:column;
+        padding:6px 16px;
+      }
+
+      .trust-trio li{
+        justify-content:flex-start;
+        padding:10px 0;
+      }
+
+      .trust-trio li:not(:last-child){
+        border-right:none;
+        border-bottom:1px solid var(--line);
+      }
+
       .combo{
         grid-template-columns:1fr;
         padding:28px;
@@ -680,19 +737,25 @@
 
         <div class="cards">
           <article class="card">
-            <div class="card-kicker">Do A1 ao A2</div>
             <h3>IQL — Inglês em Qualquer Lugar</h3>
+            <p class="card-headline">Do básico à comunicação com mais autonomia.</p>
             <p class="card-sub">
-              Para quem quer construir uma base de inglês e começar a se comunicar
-              com mais clareza e autonomia no dia a dia.
+              10 módulos para construir sua base, ampliar vocabulário e começar a usar
+              o inglês com mais segurança no dia a dia.
             </p>
 
             <ul class="benefits">
               <li>10 módulos</li>
-              <li>Conteúdo do nível A1 ao A2</li>
-              <li>Vocabulário, compreensão e comunicação</li>
-              <li>Mentalidade e prática no seu ritmo</li>
-              <li>Acesso por 2 anos</li>
+              <li>Do A1 ao A2</li>
+              <li>Amplie seu vocabulário</li>
+              <li>Desenvolva compreensão e comunicação</li>
+              <li>Estude no seu ritmo</li>
+            </ul>
+
+            <ul class="trust-trio">
+              <li>Compra única</li>
+              <li>Acesso vitalício</li>
+              <li>7 dias de garantia</li>
             </ul>
 
             <div class="price-block">
@@ -720,19 +783,27 @@
           </article>
 
           <article class="card">
-            <div class="card-kicker">Inglês para viagens</div>
             <h3>Viajando sem Perrengue</h3>
+            <p class="card-headline">O inglês que você precisa para se virar na viagem.</p>
             <p class="card-sub">
-              Inglês prático para você se comunicar com mais segurança
-              nas principais situações da sua viagem internacional.
+              7 módulos práticos para você se comunicar com mais segurança nas
+              situações que realmente acontecem fora do país.
             </p>
 
             <ul class="benefits">
               <li>7 módulos</li>
-              <li>Restaurante, hotel e shopping</li>
               <li>Aeroporto e imigração</li>
+              <li>Hotel</li>
+              <li>Restaurante</li>
+              <li>Shopping</li>
+              <li>Transporte</li>
               <li>Comunicação em situações reais de viagem</li>
-              <li>Mais autonomia para se virar fora do país</li>
+            </ul>
+
+            <ul class="trust-trio">
+              <li>Compra única</li>
+              <li>Acesso vitalício</li>
+              <li>7 dias de garantia</li>
             </ul>
 
             <div class="price-block">
