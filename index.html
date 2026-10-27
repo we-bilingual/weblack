@@ -92,13 +92,16 @@
     /* HERO */
     .hero{
       background:
-        radial-gradient(circle at 82% 22%, rgba(255,255,255,.10), transparent 24%),
-        linear-gradient(135deg, #060606 0%, #0d0d0d 58%, #171717 100%);
+        radial-gradient(circle at 80% 15%, rgba(215,58,50,.17), transparent 40%),
+        radial-gradient(circle at 10% 68%, rgba(255,255,255,.06), transparent 46%),
+        radial-gradient(circle at 60% 102%, rgba(255,255,255,.045), transparent 52%),
+        linear-gradient(160deg, #050505 0%, #0b0b0b 42%, #141414 76%, #080808 100%);
       color:#fff;
       min-height:620px;
       display:flex;
       align-items:center;
       overflow:hidden;
+      position:relative;
     }
 
     .hero-grid{
@@ -123,32 +126,65 @@
       font-weight:500;
     }
 
+    .hero-impact{
+      font-size:clamp(16px,1.6vw,20px);
+      line-height:1.45;
+      margin:14px 0 0;
+      max-width:420px;
+      color:#aeaeae;
+      font-weight:400;
+    }
+
     .hero-logos{
       grid-area:logos;
-      display:flex;
+      margin-top:30px;
+    }
+
+    .hero-logos-wrap{
+      position:relative;
+      display:inline-flex;
       align-items:center;
-      gap:16px;
-      margin-top:26px;
+      gap:18px;
+      padding:20px 26px;
+      border-radius:26px;
+      background:linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.015));
+      border:1px solid rgba(255,255,255,.1);
+    }
+
+    .hero-logos-wrap::before{
+      content:"";
+      position:absolute;
+      inset:-26px;
+      background:radial-gradient(circle, rgba(255,255,255,.08), transparent 68%);
+      filter:blur(4px);
+      z-index:-1;
     }
 
     .hero-logo{
-      height:92px;
+      height:88px;
       width:auto;
       display:block;
-      border-radius:18px;
-      box-shadow:0 18px 38px rgba(0,0,0,.35);
+      border-radius:16px;
+      box-shadow:0 18px 38px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.06);
     }
 
     .hero-logo--vsp{
-      height:82px;
+      height:78px;
     }
 
     .hero-logo-plus{
       flex:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.2);
       font-family:var(--serif);
-      font-size:34px;
+      font-size:19px;
       font-weight:500;
-      color:#d7d7d7;
+      color:#ededed;
       line-height:1;
     }
 
@@ -879,22 +915,29 @@
       }
 
       .hero-logos{
+        margin-top:22px;
+      }
+
+      .hero-logos-wrap{
         gap:12px;
-        margin-top:20px;
+        padding:16px 18px;
+        border-radius:22px;
       }
 
       .hero-logo{
-        height:25vw;
-        max-height:92px;
+        height:23vw;
+        max-height:86px;
       }
 
       .hero-logo--vsp{
-        height:22vw;
-        max-height:82px;
+        height:20vw;
+        max-height:76px;
       }
 
       .hero-logo-plus{
-        font-size:26px;
+        width:28px;
+        height:28px;
+        font-size:16px;
       }
 
       .hero-actions{
@@ -978,12 +1021,15 @@
         <div class="hero-title-block">
           <h1>WE BLACK</h1>
           <div class="tagline">Your English starts here.</div>
+          <p class="hero-impact">Do inglês para a sua rotina ao inglês para as suas viagens.</p>
         </div>
 
         <div class="hero-logos" aria-label="IQL e Viajando sem Perrengue">
-          <img class="hero-logo hero-logo--iql" src="iql-logo.png" alt="IQL — Inglês em Qualquer Lugar" />
-          <span class="hero-logo-plus" aria-hidden="true">+</span>
-          <img class="hero-logo hero-logo--vsp" src="vsp-logo.png" alt="Viajando sem Perrengue" />
+          <div class="hero-logos-wrap">
+            <img class="hero-logo hero-logo--iql" src="iql-logo.png" alt="IQL — Inglês em Qualquer Lugar" />
+            <span class="hero-logo-plus" aria-hidden="true">+</span>
+            <img class="hero-logo hero-logo--vsp" src="vsp-logo.png" alt="Viajando sem Perrengue" />
+          </div>
         </div>
 
         <div class="hero-offer" aria-label="Resumo da promoção">
