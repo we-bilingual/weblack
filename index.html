@@ -83,10 +83,24 @@
     .whatsapp-outline{
       display:inline-flex;
       align-items:center;
-      gap:10px;
-      border:1px solid rgba(31,200,106,.85);
+      gap:8px;
+      background:var(--green);
+      color:#fff;
+      border:1px solid transparent;
       border-radius:999px;
       padding:11px 18px;
+      font-weight:800;
+    }
+    .whatsapp-outline:hover{background:var(--green-dark)}
+    .whatsapp-outline svg{flex:none}
+
+    .wb-badge{
+      display:inline-block;
+      background:#fff;
+      color:#0a0a0a;
+      padding:.08em .38em .16em;
+      border-radius:6px;
+      font-weight:900;
     }
 
     /* HERO */
@@ -135,6 +149,8 @@
     }
 
     .hero-title-block{grid-area:title}
+
+    .hero .eyebrow{color:#fff}
 
     .eyebrow{
       display:flex;
@@ -628,11 +644,14 @@
     }
 
     .deal-installments{
-      display:block;
-      margin-top:7px;
-      font-size:16px;
-      font-weight:700;
-      color:#e9e9e9;
+      display:inline-block;
+      margin-top:9px;
+      padding:4px 10px;
+      background:#fff;
+      color:#0a0a0a;
+      border-radius:6px;
+      font-size:15px;
+      font-weight:800;
     }
 
     .deal-block .btn{
@@ -727,7 +746,7 @@
     .combo-price{grid-area:price}
     .combo-action{grid-area:action}
 
-    .combo-eyebrow{margin-bottom:12px}
+    .combo-eyebrow{margin-bottom:12px;color:rgba(255,255,255,.4)}
 
     .combo h3{
       font-family:var(--serif);
@@ -748,14 +767,15 @@
       display:inline-flex;
       margin-top:14px;
       padding:8px 12px;
-      border:1px solid rgba(215,58,50,.55);
+      background:#fff;
+      border:1px solid transparent;
       border-radius:999px;
-      color:#fff;
+      color:#0a0a0a;
       font-weight:800;
       font-size:12.5px;
     }
 
-    .save strong{color:#ff6b63;margin-left:4px}
+    .save strong{color:#0a0a0a;margin-left:4px}
 
     .combo-logos{
       display:flex;
@@ -804,11 +824,14 @@
     }
 
     .combo-price small{
-      display:block;
-      color:#e0e0e0;
-      font-weight:700;
-      font-size:15px;
-      margin-top:7px;
+      display:inline-block;
+      color:#0a0a0a;
+      font-weight:800;
+      font-size:14px;
+      margin-top:9px;
+      background:#fff;
+      padding:4px 10px;
+      border-radius:6px;
     }
 
     .combo-action .btn{
@@ -856,6 +879,8 @@
       margin-bottom:48px;
     }
 
+    .faq-head .eyebrow{color:var(--text)}
+
     .faq-head h2{
       font-family:var(--serif);
       font-size:clamp(36px,4.2vw,52px);
@@ -866,9 +891,9 @@
 
     .faq-body{
       display:grid;
-      grid-template-columns:1.3fr .8fr;
+      grid-template-columns:1.5fr .62fr;
       gap:40px;
-      align-items:start;
+      align-items:center;
     }
 
     .faq-list{
@@ -923,9 +948,11 @@
     }
 
     .faq-media{
-      border-radius:24px;
+      width:min(280px, 100%);
+      aspect-ratio:1/1;
+      margin-left:auto;
+      border-radius:20px;
       overflow:hidden;
-      aspect-ratio:3/4;
       box-shadow:var(--shadow);
     }
 
@@ -933,7 +960,7 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      object-position:62% 38%;
+      object-position:24% 45%;
     }
 
     /* FAQ CTA */
@@ -1162,7 +1189,8 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          Falar no WhatsApp
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2.1c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.39 1.26 4.82L2 22l5.3-1.39a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.44 9.9-9.9s-4.45-9.81-9.91-9.81zm0 1.67c4.56 0 8.24 3.7 8.24 8.24 0 4.56-3.71 8.27-8.25 8.27a8.3 8.3 0 0 1-4.21-1.15l-.31-.18-3.14.8.84-3.05-.2-.32a8.18 8.18 0 0 1-1.26-4.38c0-4.56 3.72-8.23 8.29-8.23zM8.5 7.07c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.69 4.15 3.67 2.05.81 2.47.65 2.92.61.45-.04 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42z"/></svg>
+          Falar com a equipe
         </a>
       </nav>
     </div>
@@ -1213,7 +1241,7 @@
     <section class="offers" id="ofertas">
       <div class="container">
         <div class="section-heading">
-          <div class="eyebrow">WE BLACK</div>
+          <div class="eyebrow"><span class="wb-badge">WE BLACK</span></div>
           <h2>Escolha como você quer começar.</h2>
           <p>Do seu dia a dia às suas próximas viagens, o inglês certo para cada momento.</p>
         </div>
@@ -1270,7 +1298,7 @@
             </p>
 
             <div class="deal-block">
-              <span class="deal-badge">WE BLACK · <strong>70% OFF</strong></span>
+              <span class="deal-badge"><span class="wb-badge">WE BLACK</span> · <strong>70% OFF</strong></span>
 
               <div class="deal-main">
                 <div class="deal-price">
@@ -1374,7 +1402,7 @@
             </p>
 
             <div class="deal-block">
-              <span class="deal-badge">WE BLACK · <strong>70% OFF</strong></span>
+              <span class="deal-badge"><span class="wb-badge">WE BLACK</span> · <strong>70% OFF</strong></span>
 
               <div class="deal-main">
                 <div class="deal-price">
@@ -1418,7 +1446,7 @@
 
         <section class="combo" aria-label="Combo WE BLACK">
           <div class="combo-info">
-            <div class="eyebrow combo-eyebrow">Oportunidade</div>
+            <div class="eyebrow combo-eyebrow"><span class="wb-badge">Oportunidade</span></div>
             <h3>Combo WE BLACK</h3>
             <p>Leve IQL + Viajando sem Perrengue e tenha inglês para sua rotina e para suas viagens.</p>
             <div class="save">Economize mais <strong>R$ 37</strong></div>
@@ -1524,7 +1552,7 @@
     <section class="final-cta">
       <div class="container">
         <div class="final-box">
-          <div class="eyebrow" style="justify-content:center">WE BLACK</div>
+          <div class="eyebrow" style="justify-content:center"><span class="wb-badge">WE BLACK</span></div>
           <h2>Ainda tem alguma dúvida?</h2>
           <p>
             Fale com a nossa equipe e entenda qual opção faz mais sentido para você.
@@ -1542,7 +1570,7 @@
 
         <footer>
           <div class="brand">WE BILINGUAL</div>
-          <div>WE BLACK · Oferta válida até 30 de novembro</div>
+          <div><span class="wb-badge">WE BLACK</span> · Oferta válida até 30 de novembro</div>
         </footer>
       </div>
     </section>
