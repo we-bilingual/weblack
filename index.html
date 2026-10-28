@@ -892,14 +892,15 @@
     .faq{
       position:relative;
       background:var(--white);
-      padding:30px 0 0;
+      padding:26px 0 0;
       overflow:hidden;
     }
 
     .faq-inner{
       position:relative;
+      z-index:2;
       display:flex;
-      align-items:center;
+      align-items:flex-start;
       gap:28px;
     }
 
@@ -908,18 +909,18 @@
       min-width:0;
       padding-left:max(20px, calc((100vw - 1180px) / 2));
       padding-right:24px;
-      padding-bottom:30px;
+      padding-bottom:22px;
     }
 
     .faq-head{
-      margin-bottom:18px;
+      margin-bottom:14px;
     }
 
     .faq-head .eyebrow{color:var(--text)}
 
     .faq-head h2{
       font-family:var(--serif);
-      font-size:clamp(28px,3.2vw,40px);
+      font-size:clamp(26px,3vw,38px);
       margin:0;
       font-weight:500;
       letter-spacing:-.03em;
@@ -940,9 +941,9 @@
       align-items:center;
       justify-content:space-between;
       gap:20px;
-      padding:14px 2px;
+      padding:12px 2px;
       font-weight:700;
-      font-size:15.5px;
+      font-size:15px;
       color:var(--text);
     }
 
@@ -969,7 +970,7 @@
     }
 
     .faq-item p{
-      margin:-2px 2px 16px;
+      margin:-2px 2px 14px;
       color:var(--muted);
       font-size:14px;
       line-height:1.6;
@@ -977,31 +978,38 @@
     }
 
     .faq-visual{
-      position:relative;
       flex:0 0 36%;
       min-width:0;
-      height:320px;
+    }
+
+    .faq-globe-wrap{
+      position:absolute;
+      top:0;
+      bottom:0;
+      right:0;
+      width:33%;
+      overflow:hidden;
       pointer-events:none;
-      -webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 16%, #000 84%, transparent 100%);
-      mask-image:linear-gradient(to bottom, transparent 0%, #000 16%, #000 84%, transparent 100%);
+      z-index:1;
     }
 
     .faq-globe{
       position:absolute;
       top:50%;
-      right:-190px;
+      right:-48%;
       transform:translateY(-50%);
-      width:660px;
-      height:660px;
+      width:210%;
+      aspect-ratio:1;
       border-radius:50%;
       overflow:hidden;
+      box-shadow:0 40px 90px rgba(0,0,0,.16);
     }
 
     .faq-globe img{
       width:100%;
       height:100%;
       object-fit:cover;
-      object-position:58% 46%;
+      object-position:56% 44%;
       display:block;
     }
 
@@ -1011,8 +1019,8 @@
       inset:0;
       border-radius:50%;
       background:
-        radial-gradient(ellipse 50% 70% at 30% 30%, rgba(255,232,200,.3), transparent 55%),
-        radial-gradient(ellipse 60% 85% at 68% 78%, rgba(0,0,0,.48), transparent 60%);
+        radial-gradient(ellipse 50% 65% at 28% 26%, rgba(255,226,190,.32), transparent 55%),
+        radial-gradient(ellipse 58% 82% at 70% 80%, rgba(0,0,0,.5), transparent 62%);
     }
 
     .faq-lines{
@@ -1020,11 +1028,11 @@
       inset:0;
       width:100%;
       height:100%;
-      z-index:1;
     }
 
     .faq-bottom-curve{
       position:relative;
+      z-index:3;
       width:100%;
       height:110px;
     }
@@ -1338,22 +1346,25 @@
       }
 
       .faq-visual{
+        display:none;
+      }
+
+      .faq-globe-wrap{
         position:relative;
         top:auto;
+        bottom:auto;
         right:auto;
         width:100%;
-        height:190px;
-        flex:none;
-        margin-top:16px;
-        -webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 14%, #000 84%, transparent 100%);
-        mask-image:linear-gradient(to bottom, transparent 0%, #000 14%, #000 84%, transparent 100%);
+        height:230px;
+        margin-top:2px;
+        z-index:1;
       }
 
       .faq-globe{
-        width:340px;
-        height:340px;
+        width:380px;
+        height:380px;
         top:50%;
-        right:-150px;
+        right:-160px;
         transform:translateY(-50%);
       }
 
@@ -1805,15 +1816,17 @@
           </div>
         </div>
 
-        <div class="faq-visual" aria-hidden="true">
-          <div class="faq-globe">
-            <img src="faq-map.jpg" alt="" />
-          </div>
-          <svg class="faq-lines" viewBox="0 0 1180 320" preserveAspectRatio="none" aria-hidden="true">
-            <ellipse cx="880" cy="160" rx="290" ry="185" fill="none" stroke="rgba(10,10,10,.13)" stroke-width="1"></ellipse>
-            <ellipse class="faq-line-secondary" cx="880" cy="160" rx="290" ry="78" fill="none" stroke="rgba(10,10,10,.1)" stroke-width="1"></ellipse>
-          </svg>
+        <div class="faq-visual" aria-hidden="true"></div>
+      </div>
+
+      <div class="faq-globe-wrap" aria-hidden="true">
+        <div class="faq-globe">
+          <img src="faq-map.jpg" alt="" />
         </div>
+        <svg class="faq-lines" viewBox="0 0 560 430" preserveAspectRatio="none" aria-hidden="true">
+          <ellipse cx="420" cy="215" rx="330" ry="210" fill="none" stroke="rgba(10,10,10,.13)" stroke-width="1"></ellipse>
+          <ellipse class="faq-line-secondary" cx="420" cy="215" rx="330" ry="90" fill="none" stroke="rgba(10,10,10,.1)" stroke-width="1"></ellipse>
+        </svg>
       </div>
 
       <div class="faq-bottom-curve" aria-hidden="true">
