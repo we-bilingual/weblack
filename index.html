@@ -155,17 +155,17 @@
     }
 
     .hero-content{
-      flex:1 1 58%;
+      flex:1 1 56%;
       display:flex;
       align-items:center;
       padding-left:max(20px, calc((100vw - 1180px) / 2));
-      padding-right:36px;
+      padding-right:32px;
       min-width:0;
     }
 
     .hero-content-inner{
       max-width:680px;
-      padding:44px 0;
+      padding:36px 0;
     }
 
     .hero-badge{
@@ -194,8 +194,8 @@
 
     .hero h1{
       font-family:var(--serif-display);
-      font-size:clamp(50px,6vw,92px);
-      line-height:.94;
+      font-size:clamp(56px,6.8vw,106px);
+      line-height:.92;
       margin:0;
       letter-spacing:-.015em;
       font-weight:700;
@@ -204,8 +204,8 @@
 
     .hero-discount{
       font-family:var(--serif-display);
-      font-size:clamp(66px,8.6vw,150px);
-      line-height:.88;
+      font-size:clamp(74px,9.8vw,172px);
+      line-height:.86;
       letter-spacing:-.015em;
       font-weight:700;
       color:#0a0a0a;
@@ -332,7 +332,7 @@
 
     .hero-visual{
       position:relative;
-      flex:0 0 42%;
+      flex:0 0 44%;
       overflow:hidden;
     }
 
@@ -344,7 +344,8 @@
       display:block;
     }
 
-    .hero-curve-v{
+    .hero-curve-v,
+    .hero-curve-v-line{
       position:absolute;
       inset:0;
       width:100%;
@@ -353,8 +354,29 @@
       pointer-events:none;
     }
 
+    .hero-curve-v-line{
+      z-index:2;
+    }
+
+    .hero-curve-bottom,
+    .hero-curve-bottom-line{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      width:100%;
+      height:120px;
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .hero-curve-bottom-line{
+      z-index:2;
+    }
+
     .hero-curve-h,
-    .hero-curve-h-line{
+    .hero-curve-h-line,
+    .hero-curve-mobile-bottom{
       display:none;
     }
 
@@ -1052,21 +1074,21 @@
       .hero-content-inner{
         max-width:none;
         width:100%;
-        padding:32px 20px 26px;
+        padding:28px 20px 20px;
       }
 
       .hero-badge{
         padding:7px 15px;
         font-size:11px;
-        margin-bottom:18px;
+        margin-bottom:16px;
       }
 
       .hero h1{
-        font-size:clamp(42px,15vw,60px);
+        font-size:clamp(44px,16vw,64px);
       }
 
       .hero-discount{
-        font-size:clamp(50px,19vw,76px);
+        font-size:clamp(56px,21vw,88px);
       }
 
       .hero .tagline{
@@ -1127,16 +1149,19 @@
       .hero-visual{
         flex:none;
         width:100%;
-        height:62vw;
-        min-height:240px;
-        max-height:340px;
+        height:64vw;
+        min-height:250px;
+        max-height:350px;
       }
 
       .hero-visual img{
-        object-position:92% 38%;
+        object-position:92% 36%;
       }
 
-      .hero-curve-v{
+      .hero-curve-v,
+      .hero-curve-v-line,
+      .hero-curve-bottom,
+      .hero-curve-bottom-line{
         display:none;
       }
 
@@ -1147,12 +1172,23 @@
         top:0;
         left:0;
         width:100%;
-        height:46px;
+        height:38px;
         z-index:2;
       }
 
       .hero-curve-h-line{
         z-index:3;
+      }
+
+      .hero-curve-mobile-bottom{
+        display:block;
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        width:100%;
+        height:44px;
+        z-index:2;
       }
 
       .cards{
@@ -1336,15 +1372,32 @@
 
         <div class="hero-visual">
           <svg class="hero-curve-v" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,0 L6,0 C42,0 42,100 6,100 L0,100 Z" fill="#f5f5f2"></path>
+            <path d="M0,0 L16,0 C50,6 52,38 52,50 C52,62 44,92 10,100 L0,100 Z" fill="#f5f5f2"></path>
           </svg>
+          <svg class="hero-curve-v-line" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M21,0 C55,6 57,38 57,50 C57,62 49,92 15,100" fill="none" stroke="rgba(10,10,10,.14)" stroke-width=".4"></path>
+            <path d="M27,0 C61,6 63,38 63,50 C63,62 55,92 21,100" fill="none" stroke="rgba(10,10,10,.08)" stroke-width=".3"></path>
+          </svg>
+
           <svg class="hero-curve-h" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,24 C320,-10 480,100 800,68 C1100,38 1220,96 1440,62 L1440,0 L0,0 Z" fill="#f5f5f2"></path>
+            <path d="M0,10 C480,70 960,-10 1440,40 L1440,0 L0,0 Z" fill="#f5f5f2"></path>
           </svg>
           <svg class="hero-curve-h-line" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,34 C320,0 480,110 800,78 C1100,48 1220,106 1440,72" fill="none" stroke="rgba(10,10,10,.18)" stroke-width="2"></path>
+            <path d="M0,20 C480,80 960,0 1440,50" fill="none" stroke="rgba(10,10,10,.18)" stroke-width="2"></path>
           </svg>
+
           <img src="hero-bg.jpg" alt="Notebook, passaporte e janela do avião ao pôr do sol" />
+
+          <svg class="hero-curve-bottom" viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,100 L0,42 C130,8 270,76 400,34 L400,100 Z" fill="#f5f5f2"></path>
+          </svg>
+          <svg class="hero-curve-bottom-line" viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,34 C130,0 270,68 400,26" fill="none" stroke="rgba(10,10,10,.16)" stroke-width=".6"></path>
+          </svg>
+
+          <svg class="hero-curve-mobile-bottom" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,120 L0,64 C480,16 960,100 1440,52 L1440,120 Z" fill="#f5f5f2"></path>
+          </svg>
         </div>
       </div>
     </section>
