@@ -136,8 +136,27 @@
     .hero-grid{
       position:relative;
       z-index:1;
-      max-width:600px;
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+      gap:56px;
+      max-width:860px;
       padding:92px 0 134px;
+    }
+
+    .hero-block--campaign{
+      flex:0 0 auto;
+      max-width:340px;
+    }
+
+    .hero-block--products{
+      flex:0 0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:stretch;
+      gap:26px;
+      padding-left:40px;
+      border-left:1px solid rgba(255,255,255,.16);
     }
 
     .eyebrow{
@@ -215,10 +234,6 @@
       letter-spacing:.01em;
     }
 
-    .hero-logos{
-      margin-top:32px;
-    }
-
     .hero-logos-wrap{
       position:relative;
       display:inline-flex;
@@ -269,12 +284,15 @@
       line-height:1;
     }
 
-    .hero-actions{
+    .hero-block--products .hero-actions{
       display:flex;
-      align-items:center;
-      gap:18px;
-      flex-wrap:wrap;
-      margin-top:30px;
+      flex-direction:column;
+      align-items:stretch;
+      gap:12px;
+    }
+
+    .hero-block--products .hero-actions .btn{
+      width:100%;
     }
 
     .btn{
@@ -308,6 +326,18 @@
       border-color:rgba(255,255,255,.4);
       background:transparent;
     }
+
+    .btn-primary-cta{
+      font-size:15.5px;
+    }
+
+    .btn-secondary-cta{
+      font-weight:600;
+      font-size:14px;
+      min-height:48px;
+      opacity:.86;
+    }
+    .btn-secondary-cta:hover{opacity:1}
 
     /* OFFERS */
     .offers{
@@ -818,7 +848,10 @@
     }
 
     .faq-body{
-      max-width:760px;
+      display:grid;
+      grid-template-columns:1.5fr .62fr;
+      gap:40px;
+      align-items:center;
     }
 
     .faq-list{
@@ -870,6 +903,22 @@
       font-size:15px;
       line-height:1.65;
       max-width:560px;
+    }
+
+    .faq-media{
+      width:min(270px,100%);
+      aspect-ratio:4/5;
+      margin:0 auto;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .faq-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transform:scale(1.3);
     }
 
     /* FAQ CTA */
@@ -962,38 +1011,58 @@
       }
 
       .hero-grid{
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
         max-width:none;
-        padding:40px 0 76px;
+        padding:36px 0 76px;
+      }
+
+      .hero-block--campaign{
+        max-width:none;
+      }
+
+      .hero-block--products{
+        border-left:none;
+        padding-left:0;
+        margin-top:26px;
+        gap:16px;
       }
 
       .hero-campaign-card{
-        padding:20px 22px 18px;
-        border-radius:16px;
+        display:inline-block;
+        padding:16px 20px 14px;
+        border-radius:15px;
       }
 
       .hero h1{
-        font-size:clamp(28px,8vw,38px);
+        font-size:clamp(24px,7vw,32px);
       }
 
       .hero-discount{
-        font-size:clamp(38px,11vw,54px);
+        font-size:clamp(30px,8.6vw,42px);
+        margin-top:2px;
       }
 
       .hero-validity{
-        font-size:11.5px;
+        margin-top:10px;
+        padding-top:9px;
+        font-size:11px;
       }
 
-      .hero .tagline{margin-top:18px}
-      .hero-impact{margin-top:8px}
-
-      .hero-logos{
-        margin-top:22px;
-      }
+      .hero .tagline{margin-top:16px}
+      .hero-impact{margin-top:7px}
 
       .hero-logos-wrap{
-        gap:14px;
-        padding:18px 20px;
-        border-radius:20px;
+        gap:12px;
+        padding:14px 16px;
+        border-radius:18px;
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.12), 0 14px 28px rgba(0,0,0,.26);
+      }
+
+      .hero-logos-wrap::before{
+        inset:-18px;
+        opacity:.6;
       }
 
       .hero-logo{
@@ -1007,19 +1076,24 @@
       }
 
       .hero-logo-plus{
-        width:30px;
-        height:30px;
-        font-size:16px;
-      }
-
-      .hero-actions{
-        margin-top:10px;
-        gap:12px;
+        width:24px;
+        height:24px;
+        font-size:13px;
       }
 
       .hero .btn{
         min-height:48px;
         padding:12px 22px;
+      }
+
+      .btn-primary-cta{
+        min-height:52px;
+        font-size:15px;
+      }
+
+      .btn-secondary-cta{
+        min-height:44px;
+        font-size:13px;
       }
 
       .cards{
@@ -1086,12 +1160,18 @@
         flex-direction:column;
         align-items:flex-start;
       }
+
+      .faq-body{
+        grid-template-columns:1fr;
+      }
+
+      .faq-media{
+        display:none;
+      }
     }
 
     @media (max-width: 520px){
       .brand{font-size:14px}
-      .hero-actions{align-items:stretch}
-      .hero-actions .btn{width:100%}
       .offers{padding:64px 0}
       .section-heading{margin-bottom:28px}
       .section-heading p{font-size:16px}
@@ -1127,7 +1207,7 @@
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
-          <div class="hero-title-block">
+          <div class="hero-block hero-block--campaign">
             <div class="hero-campaign-card" aria-label="WE BLACK, 70% OFF">
               <h1>WE BLACK</h1>
               <div class="hero-discount">70% OFF</div>
@@ -1137,25 +1217,25 @@
             <p class="hero-impact">Inglês para sua rotina. Inglês para suas viagens.</p>
           </div>
 
-          <div class="hero-logos" aria-label="IQL e Viajando sem Perrengue">
-            <div class="hero-logos-wrap">
+          <div class="hero-block hero-block--products">
+            <div class="hero-logos-wrap" aria-label="IQL e Viajando sem Perrengue">
               <img class="hero-logo hero-logo--iql" src="iql-logo.png" alt="IQL — Inglês em Qualquer Lugar" />
               <span class="hero-logo-plus" aria-hidden="true">+</span>
               <img class="hero-logo hero-logo--vsp" src="vsp-logo.png" alt="Viajando sem Perrengue" />
             </div>
-          </div>
 
-          <div class="hero-actions">
-            <a class="btn btn-line" href="#ofertas">Quero ver as ofertas →</a>
-            <a
-              class="btn btn-green"
-              href="https://wa.me/5544988271830?text=Ol%C3%A1%21%20Vim%20pela%20WE%20BLACK%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20cursos."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2.1c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.39 1.26 4.82L2 22l5.3-1.39a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.44 9.9-9.9s-4.45-9.81-9.91-9.81zm0 1.67c4.56 0 8.24 3.7 8.24 8.24 0 4.56-3.71 8.27-8.25 8.27a8.3 8.3 0 0 1-4.21-1.15l-.31-.18-3.14.8.84-3.05-.2-.32a8.18 8.18 0 0 1-1.26-4.38c0-4.56 3.72-8.23 8.29-8.23zM8.5 7.07c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.69 4.15 3.67 2.05.81 2.47.65 2.92.61.45-.04 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42z"/></svg>
-              Falar com a equipe
-            </a>
+            <div class="hero-actions">
+              <a class="btn btn-green btn-primary-cta" href="#ofertas">Quero ver as ofertas →</a>
+              <a
+                class="btn btn-line btn-secondary-cta"
+                href="https://wa.me/5544988271830?text=Ol%C3%A1%21%20Vim%20pela%20WE%20BLACK%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20cursos."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2.1c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.39 1.26 4.82L2 22l5.3-1.39a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.44 9.9-9.9s-4.45-9.81-9.91-9.81zm0 1.67c4.56 0 8.24 3.7 8.24 8.24 0 4.56-3.71 8.27-8.25 8.27a8.3 8.3 0 0 1-4.21-1.15l-.31-.18-3.14.8.84-3.05-.2-.32a8.18 8.18 0 0 1-1.26-4.38c0-4.56 3.72-8.23 8.29-8.23zM8.5 7.07c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.69 4.15 3.67 2.05.81 2.47.65 2.92.61.45-.04 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42z"/></svg>
+                Falar com a equipe
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -1465,6 +1545,10 @@
                 te ajudamos rapidinho.
               </p>
             </details>
+          </div>
+
+          <div class="faq-media" aria-hidden="true">
+            <img src="faq-map.jpg" alt="" />
           </div>
         </div>
       </div>
