@@ -136,21 +136,11 @@
     .hero-grid{
       position:relative;
       z-index:1;
-      display:grid;
-      grid-template-columns:1.08fr .92fr;
-      grid-template-areas:
-        "title offer"
-        "logos offer"
-        "cta offer";
-      column-gap:76px;
-      row-gap:24px;
-      align-items:center;
+      max-width:620px;
       padding:88px 0 112px;
     }
 
-    .hero-title-block{grid-area:title}
-
-    .hero .eyebrow{color:#fff}
+    .hero-title-block{margin-bottom:0}
 
     .eyebrow{
       display:flex;
@@ -172,24 +162,47 @@
       opacity:.8;
     }
 
-    .hero h1{
+    .hero-campaign-card{
       display:inline-block;
+      background:#fff;
+      border-radius:22px;
+      padding:30px 36px 26px;
+      box-shadow:0 22px 54px rgba(0,0,0,.4);
+    }
+
+    .hero h1{
       font-family:var(--serif);
-      font-size:clamp(44px,5.5vw,74px);
+      font-size:clamp(40px,5vw,62px);
       line-height:1;
       margin:0;
       letter-spacing:-.04em;
       font-weight:500;
       color:#0a0a0a;
-      background:#fff;
-      padding:.08em .32em .14em;
-      border-radius:10px;
-      box-shadow:0 16px 34px rgba(0,0,0,.4);
+    }
+
+    .hero-discount{
+      font-family:var(--serif);
+      font-size:clamp(50px,6.4vw,88px);
+      line-height:.86;
+      letter-spacing:-.05em;
+      font-weight:500;
+      color:#0a0a0a;
+      margin-top:6px;
+    }
+
+    .hero-validity{
+      display:block;
+      margin-top:16px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+      font-size:13px;
+      font-weight:700;
+      color:var(--muted);
     }
 
     .hero .tagline{
       font-size:clamp(18px,1.8vw,24px);
-      margin:10px 0 0;
+      margin:22px 0 0;
       color:#e3e3e3;
       font-weight:500;
     }
@@ -197,7 +210,7 @@
     .hero-impact{
       font-size:clamp(16px,1.6vw,20px);
       line-height:1.5;
-      margin:16px 0 0;
+      margin:12px 0 0;
       max-width:430px;
       color:#c3c3c3;
       font-weight:400;
@@ -205,8 +218,7 @@
     }
 
     .hero-logos{
-      grid-area:logos;
-      margin-top:36px;
+      margin-top:34px;
     }
 
     .hero-logos-wrap{
@@ -260,12 +272,11 @@
     }
 
     .hero-actions{
-      grid-area:cta;
       display:flex;
       align-items:center;
       gap:18px;
       flex-wrap:wrap;
-      margin-top:16px;
+      margin-top:30px;
     }
 
     .btn{
@@ -300,45 +311,6 @@
       background:transparent;
     }
 
-    .hero-offer{
-      grid-area:offer;
-      background:#fff;
-      border-radius:22px;
-      padding:30px 34px;
-      box-shadow:0 24px 60px rgba(0,0,0,.4);
-    }
-
-    .discount-label{
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.16em;
-      color:var(--muted);
-      font-weight:800;
-    }
-
-    .discount-number{
-      font-family:var(--serif);
-      font-size:clamp(62px,7.2vw,100px);
-      line-height:.84;
-      color:#0a0a0a;
-      margin:12px 0 16px;
-      letter-spacing:-.05em;
-    }
-
-    .discount-number strong{
-      color:#0a0a0a;
-      font-weight:500;
-    }
-
-    .validity{
-      display:inline-flex;
-      border-top:1px solid var(--line);
-      padding-top:16px;
-      margin-top:4px;
-      color:var(--text);
-      font-weight:700;
-      font-size:15px;
-    }
 
     /* OFFERS */
     .offers{
@@ -1053,22 +1025,25 @@
       }
 
       .hero-grid{
-        grid-template-columns:1fr;
-        grid-template-areas:
-          "title"
-          "logos"
-          "offer"
-          "cta";
-        gap:20px;
+        max-width:none;
         padding:44px 0 32px;
       }
 
+      .hero-campaign-card{
+        padding:22px 24px 20px;
+        border-radius:18px;
+      }
+
       .hero h1{
-        font-size:clamp(38px,11vw,54px);
+        font-size:clamp(34px,10vw,48px);
+      }
+
+      .hero-discount{
+        font-size:clamp(44px,15vw,64px);
       }
 
       .hero-logos{
-        margin-top:26px;
+        margin-top:24px;
       }
 
       .hero-logos-wrap{
@@ -1101,14 +1076,6 @@
       .hero .btn{
         min-height:48px;
         padding:12px 22px;
-      }
-
-      .hero-offer{
-        padding:24px 26px;
-      }
-
-      .discount-number{
-        font-size:clamp(60px,20vw,92px);
       }
 
       .cards{
@@ -1207,7 +1174,11 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-title-block">
-          <h1>WE BLACK</h1>
+          <div class="hero-campaign-card" aria-label="WE BLACK, 70% OFF">
+            <h1>WE BLACK</h1>
+            <div class="hero-discount">70% OFF</div>
+            <span class="hero-validity">Oferta válida até 30/11</span>
+          </div>
           <div class="tagline">Your English starts here.</div>
           <p class="hero-impact">Inglês para sua rotina. Inglês para suas viagens.</p>
         </div>
@@ -1218,12 +1189,6 @@
             <span class="hero-logo-plus" aria-hidden="true">+</span>
             <img class="hero-logo hero-logo--vsp" src="vsp-logo.png" alt="Viajando sem Perrengue" />
           </div>
-        </div>
-
-        <div class="hero-offer" aria-label="Resumo da promoção">
-          <span class="discount-label">Condição especial de Black Friday</span>
-          <div class="discount-number"><strong>70%</strong> OFF</div>
-          <span class="validity">Oferta válida até 30/11</span>
         </div>
 
         <div class="hero-actions">
