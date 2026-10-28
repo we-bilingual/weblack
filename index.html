@@ -136,11 +136,9 @@
     .hero-grid{
       position:relative;
       z-index:1;
-      max-width:620px;
-      padding:88px 0 112px;
+      max-width:600px;
+      padding:92px 0 134px;
     }
-
-    .hero-title-block{margin-bottom:0}
 
     .eyebrow{
       display:flex;
@@ -165,37 +163,37 @@
     .hero-campaign-card{
       display:inline-block;
       background:#fff;
-      border-radius:22px;
-      padding:30px 36px 26px;
-      box-shadow:0 22px 54px rgba(0,0,0,.4);
+      border-radius:20px;
+      padding:26px 32px 22px;
+      box-shadow:0 20px 48px rgba(0,0,0,.4);
     }
 
     .hero h1{
       font-family:var(--serif);
-      font-size:clamp(40px,5vw,62px);
+      font-size:clamp(34px,4vw,50px);
       line-height:1;
       margin:0;
-      letter-spacing:-.04em;
+      letter-spacing:-.035em;
       font-weight:500;
       color:#0a0a0a;
     }
 
     .hero-discount{
       font-family:var(--serif);
-      font-size:clamp(50px,6.4vw,88px);
-      line-height:.86;
-      letter-spacing:-.05em;
+      font-size:clamp(44px,5.4vw,72px);
+      line-height:.88;
+      letter-spacing:-.04em;
       font-weight:500;
       color:#0a0a0a;
-      margin-top:6px;
+      margin-top:4px;
     }
 
     .hero-validity{
       display:block;
-      margin-top:16px;
-      padding-top:14px;
+      margin-top:14px;
+      padding-top:12px;
       border-top:1px solid var(--line);
-      font-size:13px;
+      font-size:12.5px;
       font-weight:700;
       color:var(--muted);
     }
@@ -203,22 +201,22 @@
     .hero .tagline{
       font-size:clamp(18px,1.8vw,24px);
       margin:22px 0 0;
-      color:#e3e3e3;
-      font-weight:500;
+      color:#fafafa;
+      font-weight:600;
     }
 
     .hero-impact{
       font-size:clamp(16px,1.6vw,20px);
       line-height:1.5;
-      margin:12px 0 0;
+      margin:10px 0 0;
       max-width:430px;
-      color:#c3c3c3;
-      font-weight:400;
+      color:#e4e4e4;
+      font-weight:500;
       letter-spacing:.01em;
     }
 
     .hero-logos{
-      margin-top:34px;
+      margin-top:32px;
     }
 
     .hero-logos-wrap{
@@ -226,8 +224,8 @@
       display:inline-flex;
       align-items:center;
       gap:22px;
-      padding:26px 34px;
-      border-radius:28px;
+      padding:24px 30px;
+      border-radius:26px;
       background:linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
       border:1px solid rgba(255,255,255,.12);
       box-shadow:inset 0 1px 0 rgba(255,255,255,.14), 0 24px 48px rgba(0,0,0,.3);
@@ -236,14 +234,14 @@
     .hero-logos-wrap::before{
       content:"";
       position:absolute;
-      inset:-32px;
+      inset:-30px;
       background:radial-gradient(circle, rgba(255,255,255,.09), transparent 68%);
       filter:blur(5px);
       z-index:-1;
     }
 
     .hero-logo{
-      height:138px;
+      height:126px;
       width:auto;
       display:block;
       border-radius:18px;
@@ -251,7 +249,7 @@
     }
 
     .hero-logo--vsp{
-      height:120px;
+      height:126px;
     }
 
     .hero-logo-plus{
@@ -259,13 +257,13 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      width:38px;
-      height:38px;
+      width:36px;
+      height:36px;
       border-radius:50%;
       background:rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.24);
       font-family:var(--serif);
-      font-size:20px;
+      font-size:19px;
       font-weight:500;
       color:#f2f2f2;
       line-height:1;
@@ -311,7 +309,6 @@
       background:transparent;
     }
 
-
     /* OFFERS */
     .offers{
       background:var(--off);
@@ -356,6 +353,7 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:22px;
+      align-items:stretch;
     }
 
     .card{
@@ -366,7 +364,7 @@
       box-shadow:var(--shadow);
       display:flex;
       flex-direction:column;
-      min-height:100%;
+      height:100%;
     }
 
     .card-head{
@@ -574,47 +572,39 @@
       margin-top:auto;
       background:#0a0a0a;
       border-radius:18px;
-      padding:22px 22px 20px;
+      padding:24px 24px 22px;
       color:#fff;
     }
 
-    .deal-badge{
-      display:block;
-      font-size:11px;
-      font-weight:800;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:#b9b9b9;
-      margin-bottom:14px;
-    }
-
-    .deal-badge strong{
-      color:#fff;
-      font-weight:800;
-    }
-
-    .deal-main{
+    .deal-row{
       display:flex;
-      align-items:flex-end;
+      align-items:center;
       justify-content:space-between;
-      gap:14px;
+      gap:18px;
       flex-wrap:wrap;
     }
 
-    .deal-price{
-      flex:1 1 auto;
-      min-width:150px;
+    .price-stack{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:2px;
     }
 
-    .deal-old{
-      display:block;
+    .price-old{
       color:#8c8c8c;
       text-decoration:line-through;
       font-size:14px;
-      margin-bottom:2px;
     }
 
-    .deal-now{
+    .price-label{
+      color:#bdbdbd;
+      font-size:13px;
+      font-weight:600;
+      margin-top:2px;
+    }
+
+    .price-now{
       font-family:var(--serif);
       font-size:clamp(34px,4vw,44px);
       font-weight:500;
@@ -623,20 +613,24 @@
       letter-spacing:-.02em;
     }
 
-    .deal-installments{
-      display:inline;
-      margin-left:8px;
-      color:#d7d7d7;
-      font-size:15px;
-      font-weight:700;
+    .price-pill{
+      display:inline-block;
+      align-self:flex-start;
+      margin-top:10px;
+      padding:7px 14px;
+      background:#fff;
+      color:#0a0a0a;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:800;
+      white-space:nowrap;
     }
 
     .deal-block .btn{
       flex:none;
       width:auto;
-      max-width:172px;
       min-height:50px;
-      padding:13px 18px;
+      padding:13px 20px;
       font-size:13.5px;
       white-space:normal;
       text-align:center;
@@ -649,7 +643,7 @@
       align-items:center;
       justify-content:center;
       gap:7px;
-      margin:16px 0 0;
+      margin:18px 0 0;
       font-size:11.5px;
       color:#9a9a9a;
       font-weight:600;
@@ -740,20 +734,6 @@
       line-height:1.5;
     }
 
-    .save{
-      display:inline-flex;
-      margin-top:14px;
-      padding:8px 12px;
-      background:#fff;
-      border:1px solid transparent;
-      border-radius:999px;
-      color:#0a0a0a;
-      font-weight:800;
-      font-size:12.5px;
-    }
-
-    .save strong{color:#0a0a0a;margin-left:4px}
-
     .combo-logos{
       display:flex;
       align-items:center;
@@ -780,32 +760,6 @@
       font-family:var(--serif);
       font-size:14px;
       color:#ededed;
-    }
-
-    .combo-price{text-align:left}
-
-    .combo-price span{
-      display:block;
-      color:#bdbdbd;
-      font-size:13px;
-      margin-bottom:4px;
-    }
-
-    .combo-price strong{
-      display:block;
-      color:#fff;
-      font-family:var(--serif);
-      font-size:44px;
-      font-weight:500;
-      line-height:1;
-    }
-
-    .combo-price small{
-      display:block;
-      color:#d7d7d7;
-      font-weight:700;
-      font-size:15px;
-      margin-top:9px;
     }
 
     .combo-action .btn{
@@ -864,10 +818,7 @@
     }
 
     .faq-body{
-      display:grid;
-      grid-template-columns:1.5fr .62fr;
-      gap:40px;
-      align-items:center;
+      max-width:760px;
     }
 
     .faq-list{
@@ -921,23 +872,6 @@
       max-width:560px;
     }
 
-    .faq-media{
-      width:min(270px, 100%);
-      aspect-ratio:4/5;
-      margin-left:auto;
-      border-radius:20px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
-
-    .faq-media img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:28% 38%;
-      transform:scale(1.3);
-    }
-
     /* FAQ CTA */
     .final-cta{
       position:relative;
@@ -957,6 +891,8 @@
       background:radial-gradient(circle, rgba(196,42,30,.26), transparent 65%);
       pointer-events:none;
     }
+
+    .final-cta .eyebrow::after{display:none}
 
     .final-box{
       position:relative;
@@ -1013,64 +949,72 @@
       .hero{
         min-height:auto;
         background-image:
-          linear-gradient(180deg, rgba(5,4,4,.93) 0%, rgba(5,4,4,.88) 55%, rgba(5,4,4,.95) 100%),
-          radial-gradient(circle at 88% 10%, rgba(196,42,30,.22), transparent 45%),
-          linear-gradient(0deg, rgba(0,0,0,.4), transparent 22%),
+          linear-gradient(185deg, rgba(5,4,4,.94) 0%, rgba(5,4,4,.88) 36%, rgba(5,4,4,.58) 60%, rgba(5,4,4,.2) 100%),
+          radial-gradient(circle at 85% 6%, rgba(196,42,30,.14), transparent 40%),
           url('hero-bg.jpg');
-        background-position:0 0, 0 0, 0 0, 68% center;
+        background-repeat:no-repeat, no-repeat, no-repeat;
+        background-position:0 0, 0 0, 86% 28%;
+        background-size:100% 100%, 100% 100%, cover;
       }
 
       .hero-wave{
-        height:52px;
+        height:60px;
       }
 
       .hero-grid{
         max-width:none;
-        padding:44px 0 32px;
+        padding:40px 0 76px;
       }
 
       .hero-campaign-card{
-        padding:22px 24px 20px;
-        border-radius:18px;
+        padding:20px 22px 18px;
+        border-radius:16px;
       }
 
       .hero h1{
-        font-size:clamp(34px,10vw,48px);
+        font-size:clamp(28px,8vw,38px);
       }
 
       .hero-discount{
-        font-size:clamp(44px,15vw,64px);
+        font-size:clamp(38px,11vw,54px);
       }
 
+      .hero-validity{
+        font-size:11.5px;
+      }
+
+      .hero .tagline{margin-top:18px}
+      .hero-impact{margin-top:8px}
+
       .hero-logos{
-        margin-top:24px;
+        margin-top:22px;
       }
 
       .hero-logos-wrap{
         gap:14px;
-        padding:20px 22px;
-        border-radius:22px;
+        padding:18px 20px;
+        border-radius:20px;
       }
 
       .hero-logo{
-        height:33vw;
-        max-height:116px;
+        height:30vw;
+        max-height:104px;
       }
 
       .hero-logo--vsp{
-        height:29vw;
-        max-height:102px;
+        height:30vw;
+        max-height:104px;
       }
 
       .hero-logo-plus{
-        width:32px;
-        height:32px;
-        font-size:17px;
+        width:30px;
+        height:30px;
+        font-size:16px;
       }
 
       .hero-actions{
         margin-top:10px;
-        gap:14px;
+        gap:12px;
       }
 
       .hero .btn{
@@ -1086,6 +1030,17 @@
         padding:26px;
       }
 
+      .card-head{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+      }
+
+      .card-tag{margin-top:10px}
+
+      .card h3{text-align:center}
+      .card-headline{text-align:center}
+
       .trait-row{
         gap:8px;
       }
@@ -1096,12 +1051,15 @@
         grid-template-columns:repeat(2,1fr);
       }
 
-      .deal-main{
-        gap:16px;
+      .deal-row{
+        flex-direction:column;
+        align-items:center;
       }
 
+      .price-stack{align-items:center}
+      .price-pill{align-self:center}
+
       .deal-block .btn{
-        max-width:none;
         width:100%;
       }
 
@@ -1121,13 +1079,8 @@
 
       .combo-logos{margin-top:4px}
 
-      .combo-price{text-align:center}
-
-      .faq-body{
-        grid-template-columns:1fr;
-      }
-
-      .faq-media{display:none}
+      .combo-price.price-stack{align-items:center}
+      .combo-price .price-pill{align-self:center}
 
       footer{
         flex-direction:column;
@@ -1172,41 +1125,43 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-title-block">
-          <div class="hero-campaign-card" aria-label="WE BLACK, 70% OFF">
-            <h1>WE BLACK</h1>
-            <div class="hero-discount">70% OFF</div>
-            <span class="hero-validity">Oferta válida até 30/11</span>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-title-block">
+            <div class="hero-campaign-card" aria-label="WE BLACK, 70% OFF">
+              <h1>WE BLACK</h1>
+              <div class="hero-discount">70% OFF</div>
+              <span class="hero-validity">Oferta válida até 30/11</span>
+            </div>
+            <div class="tagline">Your English starts here.</div>
+            <p class="hero-impact">Inglês para sua rotina. Inglês para suas viagens.</p>
           </div>
-          <div class="tagline">Your English starts here.</div>
-          <p class="hero-impact">Inglês para sua rotina. Inglês para suas viagens.</p>
-        </div>
 
-        <div class="hero-logos" aria-label="IQL e Viajando sem Perrengue">
-          <div class="hero-logos-wrap">
-            <img class="hero-logo hero-logo--iql" src="iql-logo.png" alt="IQL — Inglês em Qualquer Lugar" />
-            <span class="hero-logo-plus" aria-hidden="true">+</span>
-            <img class="hero-logo hero-logo--vsp" src="vsp-logo.png" alt="Viajando sem Perrengue" />
+          <div class="hero-logos" aria-label="IQL e Viajando sem Perrengue">
+            <div class="hero-logos-wrap">
+              <img class="hero-logo hero-logo--iql" src="iql-logo.png" alt="IQL — Inglês em Qualquer Lugar" />
+              <span class="hero-logo-plus" aria-hidden="true">+</span>
+              <img class="hero-logo hero-logo--vsp" src="vsp-logo.png" alt="Viajando sem Perrengue" />
+            </div>
           </div>
-        </div>
 
-        <div class="hero-actions">
-          <a class="btn btn-line" href="#ofertas">Quero ver as ofertas →</a>
-          <a
-            class="btn btn-green"
-            href="https://wa.me/5544988271830?text=Ol%C3%A1%21%20Vim%20pela%20WE%20BLACK%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20cursos."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2.1c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.39 1.26 4.82L2 22l5.3-1.39a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.44 9.9-9.9s-4.45-9.81-9.91-9.81zm0 1.67c4.56 0 8.24 3.7 8.24 8.24 0 4.56-3.71 8.27-8.25 8.27a8.3 8.3 0 0 1-4.21-1.15l-.31-.18-3.14.8.84-3.05-.2-.32a8.18 8.18 0 0 1-1.26-4.38c0-4.56 3.72-8.23 8.29-8.23zM8.5 7.07c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.69 4.15 3.67 2.05.81 2.47.65 2.92.61.45-.04 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42z"/></svg>
-            Falar com a equipe
-          </a>
+          <div class="hero-actions">
+            <a class="btn btn-line" href="#ofertas">Quero ver as ofertas →</a>
+            <a
+              class="btn btn-green"
+              href="https://wa.me/5544988271830?text=Ol%C3%A1%21%20Vim%20pela%20WE%20BLACK%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20cursos."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2.1c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.39 1.26 4.82L2 22l5.3-1.39a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.44 9.9-9.9s-4.45-9.81-9.91-9.81zm0 1.67c4.56 0 8.24 3.7 8.24 8.24 0 4.56-3.71 8.27-8.25 8.27a8.3 8.3 0 0 1-4.21-1.15l-.31-.18-3.14.8.84-3.05-.2-.32a8.18 8.18 0 0 1-1.26-4.38c0-4.56 3.72-8.23 8.29-8.23zM8.5 7.07c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.69 4.15 3.67 2.05.81 2.47.65 2.92.61.45-.04 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42z"/></svg>
+              Falar com a equipe
+            </a>
+          </div>
         </div>
       </div>
 
       <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,68 C280,124 460,8 760,44 C1060,80 1200,18 1440,58 L1440,120 L0,120 Z" fill="#f5f5f2"></path>
+        <path d="M0,96 C320,130 480,20 800,52 C1100,82 1220,24 1440,58 L1440,120 L0,120 Z" fill="#f5f5f2"></path>
       </svg>
     </section>
 
@@ -1270,13 +1225,12 @@
             </p>
 
             <div class="deal-block">
-              <span class="deal-badge"><span class="wb-badge">WE BLACK</span> · <strong>70% OFF</strong></span>
-
-              <div class="deal-main">
-                <div class="deal-price">
-                  <span class="deal-old">De R$ 997</span>
-                  <span class="deal-now">R$ 297</span>
-                  <span class="deal-installments">ou até 12x de R$ 30,72</span>
+              <div class="deal-row">
+                <div class="price-stack">
+                  <span class="price-old">De R$ 997</span>
+                  <span class="price-label">Por apenas</span>
+                  <strong class="price-now">R$ 297</strong>
+                  <span class="price-pill">ou até 12x de R$ 30,72</span>
                 </div>
 
                 <a
@@ -1374,13 +1328,12 @@
             </p>
 
             <div class="deal-block">
-              <span class="deal-badge"><span class="wb-badge">WE BLACK</span> · <strong>70% OFF</strong></span>
-
-              <div class="deal-main">
-                <div class="deal-price">
-                  <span class="deal-old">De R$ 297</span>
-                  <span class="deal-now">R$ 87</span>
-                  <span class="deal-installments">ou até 12x de R$ 9,00</span>
+              <div class="deal-row">
+                <div class="price-stack">
+                  <span class="price-old">De R$ 297</span>
+                  <span class="price-label">Por apenas</span>
+                  <strong class="price-now">R$ 87</strong>
+                  <span class="price-pill">ou até 12x de R$ 9,00</span>
                 </div>
 
                 <a
@@ -1421,7 +1374,6 @@
             <div class="eyebrow combo-eyebrow"><span class="wb-badge">Oportunidade</span></div>
             <h3>Combo WE BLACK</h3>
             <p>Leve IQL + Viajando sem Perrengue e tenha inglês para sua rotina e para suas viagens.</p>
-            <div class="save">Economize mais <strong>R$ 37</strong></div>
           </div>
 
           <div class="combo-logos" aria-label="IQL e Viajando sem Perrengue">
@@ -1430,10 +1382,11 @@
             <img class="combo-logo" src="vsp-logo.png" alt="Viajando sem Perrengue" />
           </div>
 
-          <div class="combo-price">
-            <span>Por apenas</span>
-            <strong>R$ 347</strong>
-            <small>ou até 12x de R$ 35,89</small>
+          <div class="combo-price price-stack">
+            <span class="price-old">De R$ 1.294</span>
+            <span class="price-label">Por apenas</span>
+            <strong class="price-now">R$ 347</strong>
+            <span class="price-pill">ou até 12x de R$ 35,89</span>
           </div>
 
           <div class="combo-action">
@@ -1512,10 +1465,6 @@
                 te ajudamos rapidinho.
               </p>
             </details>
-          </div>
-
-          <div class="faq-media" aria-hidden="true">
-            <img src="faq-map.jpg" alt="" />
           </div>
         </div>
       </div>
