@@ -123,15 +123,15 @@
       position:relative;
       z-index:1;
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:1.08fr .92fr;
       grid-template-areas:
         "title offer"
         "logos offer"
         "cta offer";
-      column-gap:64px;
-      row-gap:22px;
+      column-gap:76px;
+      row-gap:24px;
       align-items:center;
-      padding:84px 0 108px;
+      padding:88px 0 112px;
     }
 
     .hero-title-block{grid-area:title}
@@ -180,48 +180,50 @@
 
     .hero-impact{
       font-size:clamp(16px,1.6vw,20px);
-      line-height:1.45;
-      margin:14px 0 0;
-      max-width:420px;
-      color:#b7b7b7;
+      line-height:1.5;
+      margin:16px 0 0;
+      max-width:430px;
+      color:#c3c3c3;
       font-weight:400;
+      letter-spacing:.01em;
     }
 
     .hero-logos{
       grid-area:logos;
-      margin-top:28px;
+      margin-top:36px;
     }
 
     .hero-logos-wrap{
       position:relative;
       display:inline-flex;
       align-items:center;
-      gap:18px;
-      padding:20px 26px;
-      border-radius:26px;
-      background:linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.015));
-      border:1px solid rgba(255,255,255,.1);
+      gap:22px;
+      padding:26px 34px;
+      border-radius:28px;
+      background:linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.14), 0 24px 48px rgba(0,0,0,.3);
     }
 
     .hero-logos-wrap::before{
       content:"";
       position:absolute;
-      inset:-26px;
-      background:radial-gradient(circle, rgba(255,255,255,.08), transparent 68%);
-      filter:blur(4px);
+      inset:-32px;
+      background:radial-gradient(circle, rgba(255,255,255,.09), transparent 68%);
+      filter:blur(5px);
       z-index:-1;
     }
 
     .hero-logo{
-      height:118px;
+      height:138px;
       width:auto;
       display:block;
-      border-radius:16px;
-      box-shadow:0 18px 36px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.06);
+      border-radius:18px;
+      box-shadow:0 20px 40px rgba(0,0,0,.48), 0 0 0 1px rgba(255,255,255,.07);
     }
 
     .hero-logo--vsp{
-      height:104px;
+      height:120px;
     }
 
     .hero-logo-plus{
@@ -229,14 +231,15 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      width:28px;
-      height:28px;
+      width:38px;
+      height:38px;
       border-radius:50%;
-      border:1px solid rgba(255,255,255,.2);
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.24);
       font-family:var(--serif);
-      font-size:16px;
+      font-size:20px;
       font-weight:500;
-      color:#ededed;
+      color:#f2f2f2;
       line-height:1;
     }
 
@@ -246,7 +249,7 @@
       align-items:center;
       gap:18px;
       flex-wrap:wrap;
-      margin-top:8px;
+      margin-top:16px;
     }
 
     .btn{
@@ -295,10 +298,10 @@
 
     .discount-number{
       font-family:var(--serif);
-      font-size:clamp(84px,10vw,138px);
+      font-size:clamp(80px,9.5vw,132px);
       line-height:.82;
       color:#fff;
-      margin:12px 0 14px;
+      margin:14px 0 18px;
       letter-spacing:-.06em;
     }
 
@@ -1035,33 +1038,34 @@
       }
 
       .hero-logos{
-        margin-top:22px;
+        margin-top:26px;
       }
 
       .hero-logos-wrap{
-        gap:12px;
-        padding:16px 18px;
-        border-radius:20px;
+        gap:14px;
+        padding:20px 22px;
+        border-radius:22px;
       }
 
       .hero-logo{
-        height:28vw;
-        max-height:96px;
+        height:33vw;
+        max-height:116px;
       }
 
       .hero-logo--vsp{
-        height:25vw;
-        max-height:84px;
+        height:29vw;
+        max-height:102px;
       }
 
       .hero-logo-plus{
-        width:26px;
-        height:26px;
-        font-size:15px;
+        width:32px;
+        height:32px;
+        font-size:17px;
       }
 
       .hero-actions{
-        margin-top:4px;
+        margin-top:10px;
+        gap:14px;
       }
 
       .hero .btn{
@@ -1171,7 +1175,7 @@
           <div class="eyebrow">Black Friday</div>
           <h1>WE BLACK</h1>
           <div class="tagline">Your English starts here.</div>
-          <p class="hero-impact">Do inglês para a sua rotina ao inglês para as suas viagens.</p>
+          <p class="hero-impact">Inglês para sua rotina. Inglês para suas viagens.</p>
         </div>
 
         <div class="hero-logos" aria-label="IQL e Viajando sem Perrengue">
@@ -1185,7 +1189,7 @@
         <div class="hero-offer" aria-label="Resumo da promoção">
           <span class="discount-label">Condição especial de Black Friday</span>
           <div class="discount-number"><strong>70%</strong> OFF</div>
-          <span class="validity">Oferta válida até 30 de novembro</span>
+          <span class="validity">Oferta válida até 30/11</span>
         </div>
 
         <div class="hero-actions">
@@ -1196,7 +1200,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            Falar no WhatsApp
+            Falar com a equipe
           </a>
         </div>
       </div>
