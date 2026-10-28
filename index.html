@@ -6,6 +6,10 @@
   <meta name="description" content="WE BLACK — condições especiais nos cursos digitais da We Bilingual até 30 de novembro." />
   <title>WE BLACK | We Bilingual</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+
   <style>
     :root{
       --black:#090909;
@@ -21,6 +25,7 @@
       --radius:22px;
       --shadow:0 18px 50px rgba(0,0,0,.08);
       --serif: Georgia, "Times New Roman", serif;
+      --serif-display: "Playfair Display", Georgia, "Times New Roman", serif;
       --sans: Inter, Arial, Helvetica, sans-serif;
     }
 
@@ -94,6 +99,39 @@
     .whatsapp-outline:hover{background:var(--green-dark)}
     .whatsapp-outline svg{flex:none}
 
+    .nav-toggle{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      width:40px;
+      height:40px;
+      flex:none;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,.2);
+      background:transparent;
+      color:#fff;
+      cursor:pointer;
+      padding:0;
+    }
+
+    .mobile-nav{
+      display:none;
+      flex-direction:column;
+      background:#0a0a0a;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    .mobile-nav.is-open{display:flex}
+
+    .mobile-nav a{
+      display:block;
+      padding:16px 20px;
+      color:#fff;
+      font-size:15px;
+      font-weight:700;
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+
     .wb-badge{
       display:inline-block;
       background:#fff;
@@ -106,165 +144,107 @@
     /* HERO */
     .hero{
       position:relative;
-      color:#fff;
-      min-height:660px;
-      display:flex;
-      align-items:center;
+      background:var(--off);
       overflow:hidden;
-      background-color:#050403;
-      background-image:
-        linear-gradient(100deg, rgba(4,3,3,.96) 0%, rgba(6,4,4,.9) 32%, rgba(9,5,5,.56) 56%, rgba(10,6,6,.22) 76%, rgba(10,6,6,.08) 100%),
-        radial-gradient(circle at 80% 12%, rgba(196,42,30,.22), transparent 42%),
-        linear-gradient(0deg, rgba(0,0,0,.4), transparent 26%),
-        url('hero-bg.jpg');
-      background-repeat:no-repeat, no-repeat, no-repeat, no-repeat;
-      background-position:0 0, 0 0, 0 0, center right;
-      background-size:100% 100%, 100% 100%, 100% 100%, cover;
     }
 
-    .hero-wave{
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:-2px;
-      width:100%;
-      height:96px;
-      display:block;
-      pointer-events:none;
-    }
-
-    .hero-grid{
-      position:relative;
-      z-index:1;
+    .hero-inner{
       display:flex;
-      flex-direction:row;
-      align-items:center;
-      gap:56px;
-      max-width:860px;
-      padding:92px 0 134px;
-    }
-
-    .hero-block--campaign{
-      flex:0 0 auto;
-      max-width:340px;
-    }
-
-    .hero-block--products{
-      flex:0 0 auto;
-      display:flex;
-      flex-direction:column;
       align-items:stretch;
-      gap:26px;
-      padding-left:40px;
-      border-left:1px solid rgba(255,255,255,.16);
+      min-height:560px;
     }
 
-    .eyebrow{
+    .hero-content{
+      flex:1 1 56%;
       display:flex;
       align-items:center;
-      gap:12px;
-      color:var(--red);
-      text-transform:uppercase;
-      letter-spacing:.22em;
+      padding-left:max(20px, calc((100vw - 1180px) / 2));
+      padding-right:36px;
+      min-width:0;
+    }
+
+    .hero-content-inner{
+      max-width:600px;
+      padding:64px 0;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:1.5px solid #0a0a0a;
+      border-radius:999px;
+      padding:8px 18px;
+      font-size:12px;
       font-weight:800;
-      font-size:13px;
-      margin-bottom:16px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#0a0a0a;
+      margin-bottom:26px;
     }
 
-    .eyebrow::after{
-      content:"";
-      width:44px;
-      height:1px;
-      background:currentColor;
-      opacity:.8;
+    .hero-badge-divider{
+      color:#c7c7c0;
+      font-weight:400;
     }
 
-    .hero-campaign-card{
-      display:inline-block;
-      background:#fff;
-      border-radius:20px;
-      padding:26px 32px 22px;
-      box-shadow:0 20px 48px rgba(0,0,0,.4);
+    .hero-badge-date{
+      color:var(--red);
     }
 
     .hero h1{
-      font-family:var(--serif);
-      font-size:clamp(34px,4vw,50px);
-      line-height:1;
+      font-family:var(--serif-display);
+      font-size:clamp(44px,5.4vw,74px);
+      line-height:.96;
       margin:0;
-      letter-spacing:-.035em;
-      font-weight:500;
+      letter-spacing:-.015em;
+      font-weight:900;
       color:#0a0a0a;
     }
 
     .hero-discount{
-      font-family:var(--serif);
-      font-size:clamp(44px,5.4vw,72px);
-      line-height:.88;
-      letter-spacing:-.04em;
-      font-weight:500;
+      font-family:var(--serif-display);
+      font-size:clamp(44px,5.4vw,74px);
+      line-height:.96;
+      letter-spacing:-.015em;
+      font-weight:900;
       color:#0a0a0a;
-      margin-top:4px;
-    }
-
-    .hero-validity{
-      display:block;
-      margin-top:14px;
-      padding-top:12px;
-      border-top:1px solid var(--line);
-      font-size:12.5px;
-      font-weight:700;
-      color:var(--muted);
     }
 
     .hero .tagline{
-      font-size:clamp(18px,1.8vw,24px);
-      margin:22px 0 0;
-      color:#fafafa;
-      font-weight:600;
+      font-family:var(--serif-display);
+      font-size:clamp(20px,2.1vw,27px);
+      line-height:1.3;
+      margin:20px 0 0;
+      font-weight:700;
+      color:#0a0a0a;
     }
 
-    .hero-impact{
-      font-size:clamp(16px,1.6vw,20px);
-      line-height:1.5;
-      margin:10px 0 0;
-      max-width:430px;
-      color:#e4e4e4;
-      font-weight:500;
-      letter-spacing:.01em;
-    }
-
-    .hero-logos-wrap{
-      position:relative;
-      display:inline-flex;
+    .hero-logos{
+      display:flex;
       align-items:center;
-      gap:22px;
-      padding:24px 30px;
-      border-radius:26px;
-      background:linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.14), 0 24px 48px rgba(0,0,0,.3);
+      gap:16px;
+      margin-top:34px;
     }
 
-    .hero-logos-wrap::before{
-      content:"";
-      position:absolute;
-      inset:-30px;
-      background:radial-gradient(circle, rgba(255,255,255,.09), transparent 68%);
-      filter:blur(5px);
-      z-index:-1;
+    .hero-logo-card{
+      flex:none;
+      width:92px;
+      height:92px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:12px;
+      box-shadow:0 8px 18px rgba(16,24,40,.05);
     }
 
-    .hero-logo{
-      height:126px;
-      width:auto;
-      display:block;
-      border-radius:18px;
-      box-shadow:0 20px 40px rgba(0,0,0,.48), 0 0 0 1px rgba(255,255,255,.07);
-    }
-
-    .hero-logo--vsp{
-      height:126px;
+    .hero-logo-card img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
     }
 
     .hero-logo-plus{
@@ -272,27 +252,29 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      width:36px;
-      height:36px;
+      width:32px;
+      height:32px;
       border-radius:50%;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.24);
-      font-family:var(--serif);
-      font-size:19px;
-      font-weight:500;
-      color:#f2f2f2;
+      border:1px solid var(--line);
+      background:#fff;
+      font-family:var(--serif-display);
+      font-size:16px;
+      font-weight:700;
+      color:#0a0a0a;
       line-height:1;
     }
 
-    .hero-block--products .hero-actions{
+    .hero-actions{
       display:flex;
-      flex-direction:column;
-      align-items:stretch;
+      align-items:center;
+      flex-wrap:wrap;
       gap:12px;
+      margin-top:32px;
     }
 
-    .hero-block--products .hero-actions .btn{
-      width:100%;
+    .hero-actions .btn{
+      padding:14px 20px;
+      white-space:nowrap;
     }
 
     .btn{
@@ -322,22 +304,79 @@
     }
 
     .btn-line{
-      color:#fff;
-      border-color:rgba(255,255,255,.4);
+      color:#0a0a0a;
+      border-color:#0a0a0a;
       background:transparent;
     }
+    .btn-line:hover{background:#0a0a0a;color:#fff}
 
-    .btn-primary-cta{
-      font-size:15.5px;
+    .hero-trust{
+      list-style:none;
+      display:flex;
+      margin:32px 0 0;
+      padding:0;
     }
 
-    .btn-secondary-cta{
-      font-weight:600;
-      font-size:14px;
-      min-height:48px;
-      opacity:.86;
+    .hero-trust li{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:12.5px;
+      font-weight:700;
+      color:#1a1a1a;
+      padding:0 18px;
     }
-    .btn-secondary-cta:hover{opacity:1}
+    .hero-trust li:first-child{padding-left:0}
+    .hero-trust li:not(:last-child){border-right:1px solid var(--line)}
+    .hero-trust li svg{flex:none;color:#0a0a0a}
+
+    .hero-visual{
+      position:relative;
+      flex:0 0 43%;
+      overflow:hidden;
+    }
+
+    .hero-visual img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:100% 50%;
+      display:block;
+    }
+
+    .hero-curve-v{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .hero-curve-h,
+    .hero-curve-h-line{
+      display:none;
+    }
+
+    .eyebrow{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:var(--red);
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-weight:800;
+      font-size:13px;
+      margin-bottom:16px;
+    }
+
+    .eyebrow::after{
+      content:"";
+      width:44px;
+      height:1px;
+      background:currentColor;
+      opacity:.8;
+    }
 
     /* OFFERS */
     .offers{
@@ -987,6 +1026,7 @@
 
       .nav{
         min-height:66px;
+        gap:10px;
       }
 
       .nav-links a:not(.whatsapp-outline){display:none}
@@ -995,105 +1035,120 @@
         font-size:12px;
       }
 
-      .hero{
-        min-height:auto;
-        background-image:
-          linear-gradient(185deg, rgba(5,4,4,.94) 0%, rgba(5,4,4,.88) 36%, rgba(5,4,4,.58) 60%, rgba(5,4,4,.2) 100%),
-          radial-gradient(circle at 85% 6%, rgba(196,42,30,.14), transparent 40%),
-          url('hero-bg.jpg');
-        background-repeat:no-repeat, no-repeat, no-repeat;
-        background-position:0 0, 0 0, 86% 28%;
-        background-size:100% 100%, 100% 100%, cover;
+      .nav-toggle{
+        display:flex;
       }
 
-      .hero-wave{
-        height:60px;
-      }
-
-      .hero-grid{
+      .hero-inner{
         flex-direction:column;
-        align-items:stretch;
-        gap:0;
-        max-width:none;
-        padding:36px 0 76px;
+        min-height:0;
       }
 
-      .hero-block--campaign{
-        max-width:none;
-      }
-
-      .hero-block--products{
-        border-left:none;
+      .hero-content{
         padding-left:0;
-        margin-top:26px;
-        gap:16px;
+        padding-right:0;
       }
 
-      .hero-campaign-card{
-        display:inline-block;
-        padding:16px 20px 14px;
-        border-radius:15px;
+      .hero-content-inner{
+        max-width:none;
+        width:100%;
+        padding:32px 20px 40px;
       }
 
-      .hero h1{
-        font-size:clamp(24px,7vw,32px);
-      }
-
-      .hero-discount{
-        font-size:clamp(30px,8.6vw,42px);
-        margin-top:2px;
-      }
-
-      .hero-validity{
-        margin-top:10px;
-        padding-top:9px;
+      .hero-badge{
+        padding:7px 15px;
         font-size:11px;
+        margin-bottom:18px;
       }
 
-      .hero .tagline{margin-top:16px}
-      .hero-impact{margin-top:7px}
+      .hero h1,
+      .hero-discount{
+        font-size:clamp(38px,13vw,56px);
+      }
 
-      .hero-logos-wrap{
+      .hero .tagline{
+        font-size:clamp(18px,5.4vw,22px);
+        margin-top:14px;
+      }
+
+      .hero-logos{
+        margin-top:26px;
         gap:12px;
-        padding:14px 16px;
-        border-radius:18px;
-        box-shadow:inset 0 1px 0 rgba(255,255,255,.12), 0 14px 28px rgba(0,0,0,.26);
       }
 
-      .hero-logos-wrap::before{
-        inset:-18px;
-        opacity:.6;
-      }
-
-      .hero-logo{
-        height:30vw;
-        max-height:104px;
-      }
-
-      .hero-logo--vsp{
-        height:30vw;
-        max-height:104px;
+      .hero-logo-card{
+        width:78px;
+        height:78px;
+        padding:10px;
+        border-radius:14px;
       }
 
       .hero-logo-plus{
-        width:24px;
-        height:24px;
-        font-size:13px;
+        width:26px;
+        height:26px;
+        font-size:14px;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+        align-items:stretch;
+        gap:10px;
+        margin-top:26px;
+      }
+
+      .hero-actions .btn{
+        width:100%;
       }
 
       .hero .btn{
-        min-height:48px;
+        min-height:50px;
         padding:12px 22px;
+        font-size:14px;
       }
 
-      .btn-primary-cta{
-        min-height:52px;
-        font-size:15px;
+      .hero-trust{
+        margin-top:24px;
       }
 
-      .btn-secondary-cta{
-        min-height:44px;
-        font-size:13px;
+      .hero-trust li{
+        flex:1 1 0;
+        flex-direction:column;
+        text-align:center;
+        gap:6px;
+        padding:0 6px;
+        font-size:10.5px;
+        line-height:1.25;
+      }
+
+      .hero-visual{
+        flex:none;
+        width:100%;
+        height:54vw;
+        min-height:220px;
+        max-height:300px;
+      }
+
+      .hero-visual img{
+        object-position:90% 42%;
+      }
+
+      .hero-curve-v{
+        display:none;
+      }
+
+      .hero-curve-h,
+      .hero-curve-h-line{
+        display:block;
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:72px;
+        z-index:2;
+      }
+
+      .hero-curve-h-line{
+        z-index:3;
       }
 
       .cards{
@@ -1172,6 +1227,14 @@
 
     @media (max-width: 520px){
       .brand{font-size:14px}
+      .nav{gap:6px}
+      .whatsapp-outline{
+        padding:8px 11px;
+        font-size:11px;
+        gap:6px;
+        white-space:nowrap;
+      }
+      .nav-toggle{width:36px;height:36px}
       .offers{padding:64px 0}
       .section-heading{margin-bottom:28px}
       .section-heading p{font-size:16px}
@@ -1200,34 +1263,47 @@
           Falar com a equipe
         </a>
       </nav>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Abrir menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg>
+      </button>
     </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navegação mobile">
+      <a href="#ofertas">Oferta</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-block hero-block--campaign">
-            <div class="hero-campaign-card" aria-label="WE BLACK, 70% OFF">
-              <h1>WE BLACK</h1>
-              <div class="hero-discount">70% OFF</div>
-              <span class="hero-validity">Oferta válida até 30/11</span>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-content-inner">
+            <div class="hero-badge">
+              <span>BLACK FRIDAY</span>
+              <span class="hero-badge-divider">|</span>
+              <span class="hero-badge-date">ATÉ 30/11</span>
             </div>
-            <div class="tagline">Your English starts here.</div>
-            <p class="hero-impact">Inglês para sua rotina. Inglês para suas viagens.</p>
-          </div>
 
-          <div class="hero-block hero-block--products">
-            <div class="hero-logos-wrap" aria-label="IQL e Viajando sem Perrengue">
-              <img class="hero-logo hero-logo--iql" src="iql-logo.png" alt="IQL — Inglês em Qualquer Lugar" />
+            <h1>WE BLACK</h1>
+            <div class="hero-discount">70% OFF</div>
+            <p class="tagline">Your English starts here.</p>
+
+            <div class="hero-logos" aria-label="IQL e Viajando sem Perrengue">
+              <span class="hero-logo-card">
+                <img src="iql-logo.png" alt="IQL — Inglês em Qualquer Lugar" />
+              </span>
               <span class="hero-logo-plus" aria-hidden="true">+</span>
-              <img class="hero-logo hero-logo--vsp" src="vsp-logo.png" alt="Viajando sem Perrengue" />
+              <span class="hero-logo-card">
+                <img src="vsp-logo.png" alt="Viajando sem Perrengue" />
+              </span>
             </div>
 
             <div class="hero-actions">
-              <a class="btn btn-line btn-secondary-cta" href="#ofertas">Quero ver as ofertas →</a>
+              <a class="btn btn-green" href="#ofertas">Quero ver as ofertas →</a>
               <a
-                class="btn btn-green btn-primary-cta"
+                class="btn btn-line"
                 href="https://wa.me/5544988271830?text=Ol%C3%A1%21%20Vim%20pela%20WE%20BLACK%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20cursos."
                 target="_blank"
                 rel="noopener noreferrer"
@@ -1236,13 +1312,37 @@
                 Falar com a equipe
               </a>
             </div>
+
+            <ul class="hero-trust">
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg>
+                Compra única
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.18 8c5.09 0 5.09 8 0 8-5.09 0-7.13-8-12.73-8-4.6 0-4.6 8 0 8 5.6 0 7.64-8 12.73-8z"/></svg>
+                Acesso vitalício
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 3.2"/></svg>
+                7 dias de garantia
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,96 C320,130 480,20 800,52 C1100,82 1220,24 1440,58 L1440,120 L0,120 Z" fill="#f5f5f2"></path>
-      </svg>
+        <div class="hero-visual">
+          <svg class="hero-curve-v" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,0 L10,0 C10,15 25,30 25,50 C25,70 10,85 10,100 L0,100 Z" fill="#f5f5f2"></path>
+          </svg>
+          <svg class="hero-curve-h" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,24 C320,-10 480,100 800,68 C1100,38 1220,96 1440,62 L1440,0 L0,0 Z" fill="#f5f5f2"></path>
+          </svg>
+          <svg class="hero-curve-h-line" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,34 C320,0 480,110 800,78 C1100,48 1220,106 1440,72" fill="none" stroke="rgba(10,10,10,.18)" stroke-width="2"></path>
+          </svg>
+          <img src="hero-bg.jpg" alt="Notebook, passaporte e janela do avião ao pôr do sol" />
+        </div>
+      </div>
     </section>
 
     <section class="offers" id="ofertas">
@@ -1582,6 +1682,23 @@
   </main>
 
   <script>
+    (function () {
+      var toggle = document.getElementById('navToggle');
+      var menu = document.getElementById('mobileNav');
+      if (toggle && menu) {
+        toggle.addEventListener('click', function () {
+          var open = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', String(open));
+        });
+        menu.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', function () {
+            menu.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    })();
+
     (function () {
       var buttons = document.querySelectorAll('.info-btn');
 
