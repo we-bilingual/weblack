@@ -890,12 +890,29 @@
 
     /* FAQ */
     .faq{
+      position:relative;
       background:var(--white);
-      padding:80px 0;
+      padding:48px 0 0;
+      overflow:hidden;
+    }
+
+    .faq-inner{
+      position:relative;
+      display:flex;
+      align-items:center;
+      gap:32px;
+    }
+
+    .faq-content{
+      flex:1 1 58%;
+      min-width:0;
+      padding-left:max(20px, calc((100vw - 1180px) / 2));
+      padding-right:24px;
+      padding-bottom:56px;
     }
 
     .faq-head{
-      margin-bottom:48px;
+      margin-bottom:32px;
     }
 
     .faq-head .eyebrow{color:var(--text)}
@@ -906,13 +923,6 @@
       margin:0;
       font-weight:500;
       letter-spacing:-.03em;
-    }
-
-    .faq-body{
-      display:grid;
-      grid-template-columns:1.5fr .62fr;
-      gap:40px;
-      align-items:center;
     }
 
     .faq-list{
@@ -966,20 +976,53 @@
       max-width:560px;
     }
 
-    .faq-media{
-      width:min(270px,100%);
-      aspect-ratio:4/5;
-      margin:0 auto;
-      border-radius:20px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
+    .faq-visual{
+      position:relative;
+      flex:0 0 42%;
+      min-width:0;
+      height:480px;
+      pointer-events:none;
     }
 
-    .faq-media img{
+    .faq-globe{
+      position:absolute;
+      top:50%;
+      right:-150px;
+      transform:translateY(-50%);
+      width:540px;
+      height:540px;
+      border-radius:50%;
+      overflow:hidden;
+      box-shadow:0 30px 70px rgba(16,24,40,.1);
+    }
+
+    .faq-globe img{
       width:100%;
       height:100%;
       object-fit:cover;
-      transform:scale(1.3);
+      display:block;
+    }
+
+    .faq-lines{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      z-index:1;
+    }
+
+    .faq-bottom-curve{
+      position:relative;
+      width:100%;
+      height:150px;
+    }
+
+    .faq-bottom-curve svg{
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:100%;
+      height:100%;
     }
 
     /* FAQ CTA */
@@ -987,7 +1030,7 @@
       position:relative;
       background:#090909;
       color:#fff;
-      padding:78px 0 44px;
+      padding:52px 0 44px;
       overflow:hidden;
     }
 
@@ -1256,12 +1299,46 @@
         align-items:flex-start;
       }
 
-      .faq-body{
-        grid-template-columns:1fr;
+      .faq{
+        padding-top:32px;
       }
 
-      .faq-media{
-        display:none;
+      .faq-inner{
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+      }
+
+      .faq-content{
+        padding-left:0;
+        padding-right:0;
+        padding-bottom:32px;
+      }
+
+      .faq-head{
+        margin-bottom:22px;
+        padding-right:100px;
+      }
+
+      .faq-visual{
+        position:absolute;
+        top:0;
+        right:0;
+        width:220px;
+        height:220px;
+        flex:none;
+      }
+
+      .faq-globe{
+        width:230px;
+        height:230px;
+        top:-56px;
+        right:-84px;
+        transform:none;
+      }
+
+      .faq-bottom-curve{
+        height:86px;
       }
     }
 
@@ -1279,8 +1356,7 @@
       .section-heading{margin-bottom:28px}
       .section-heading p{font-size:16px}
       .trait-row{grid-template-columns:repeat(2,1fr)}
-      .faq{padding:56px 0}
-      .final-cta{padding-top:62px}
+      .final-cta{padding-top:48px}
     }
   </style>
 </head>
@@ -1657,13 +1733,13 @@
     </section>
 
     <section class="faq" id="duvidas">
-      <div class="container">
-        <div class="faq-head">
-          <div class="eyebrow">Dúvidas</div>
-          <h2>Perguntas frequentes</h2>
-        </div>
+      <div class="faq-inner">
+        <div class="faq-content">
+          <div class="faq-head">
+            <div class="eyebrow">Dúvidas</div>
+            <h2>Perguntas frequentes</h2>
+          </div>
 
-        <div class="faq-body">
           <div class="faq-list">
             <details class="faq-item">
               <summary>O que é a We Bilingual?</summary>
@@ -1703,11 +1779,26 @@
               </p>
             </details>
           </div>
+        </div>
 
-          <div class="faq-media" aria-hidden="true">
+        <div class="faq-visual" aria-hidden="true">
+          <div class="faq-globe">
             <img src="faq-map.jpg" alt="" />
           </div>
+          <svg class="faq-lines" viewBox="0 0 1180 480" preserveAspectRatio="none" aria-hidden="true">
+            <ellipse cx="860" cy="240" rx="330" ry="300" fill="none" stroke="rgba(10,10,10,.12)" stroke-width="1"></ellipse>
+            <ellipse cx="860" cy="240" rx="330" ry="120" fill="none" stroke="rgba(10,10,10,.09)" stroke-width="1"></ellipse>
+          </svg>
         </div>
+      </div>
+
+      <div class="faq-bottom-curve" aria-hidden="true">
+        <svg viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,160 L0,150 C480,40 960,20 1440,100 L1440,160 Z" fill="#090909"></path>
+        </svg>
+        <svg viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,150 C480,40 960,20 1440,100" fill="none" stroke="rgba(10,10,10,.15)" stroke-width="1"></path>
+        </svg>
       </div>
     </section>
 
