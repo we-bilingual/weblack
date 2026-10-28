@@ -155,7 +155,7 @@
     }
 
     .hero-content{
-      flex:1 1 56%;
+      flex:1 1 58%;
       display:flex;
       align-items:center;
       padding-left:max(20px, calc((100vw - 1180px) / 2));
@@ -164,8 +164,8 @@
     }
 
     .hero-content-inner{
-      max-width:600px;
-      padding:64px 0;
+      max-width:680px;
+      padding:44px 0;
     }
 
     .hero-badge{
@@ -194,20 +194,20 @@
 
     .hero h1{
       font-family:var(--serif-display);
-      font-size:clamp(44px,5.4vw,74px);
-      line-height:.96;
+      font-size:clamp(50px,6vw,92px);
+      line-height:.94;
       margin:0;
       letter-spacing:-.015em;
-      font-weight:900;
+      font-weight:700;
       color:#0a0a0a;
     }
 
     .hero-discount{
       font-family:var(--serif-display);
-      font-size:clamp(44px,5.4vw,74px);
-      line-height:.96;
+      font-size:clamp(66px,8.6vw,150px);
+      line-height:.88;
       letter-spacing:-.015em;
-      font-weight:900;
+      font-weight:700;
       color:#0a0a0a;
     }
 
@@ -332,7 +332,7 @@
 
     .hero-visual{
       position:relative;
-      flex:0 0 43%;
+      flex:0 0 42%;
       overflow:hidden;
     }
 
@@ -1052,7 +1052,7 @@
       .hero-content-inner{
         max-width:none;
         width:100%;
-        padding:32px 20px 40px;
+        padding:32px 20px 26px;
       }
 
       .hero-badge{
@@ -1061,9 +1061,12 @@
         margin-bottom:18px;
       }
 
-      .hero h1,
+      .hero h1{
+        font-size:clamp(42px,15vw,60px);
+      }
+
       .hero-discount{
-        font-size:clamp(38px,13vw,56px);
+        font-size:clamp(50px,19vw,76px);
       }
 
       .hero .tagline{
@@ -1072,6 +1075,7 @@
       }
 
       .hero-logos{
+        justify-content:center;
         margin-top:26px;
         gap:12px;
       }
@@ -1123,13 +1127,13 @@
       .hero-visual{
         flex:none;
         width:100%;
-        height:54vw;
-        min-height:220px;
-        max-height:300px;
+        height:62vw;
+        min-height:240px;
+        max-height:340px;
       }
 
       .hero-visual img{
-        object-position:90% 42%;
+        object-position:92% 38%;
       }
 
       .hero-curve-v{
@@ -1143,7 +1147,7 @@
         top:0;
         left:0;
         width:100%;
-        height:72px;
+        height:46px;
         z-index:2;
       }
 
@@ -1301,9 +1305,9 @@
             </div>
 
             <div class="hero-actions">
-              <a class="btn btn-green" href="#ofertas">Quero ver as ofertas →</a>
+              <a class="btn btn-line" href="#ofertas">Quero ver as ofertas →</a>
               <a
-                class="btn btn-line"
+                class="btn btn-green"
                 href="https://wa.me/5544988271830?text=Ol%C3%A1%21%20Vim%20pela%20WE%20BLACK%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20cursos."
                 target="_blank"
                 rel="noopener noreferrer"
@@ -1332,7 +1336,7 @@
 
         <div class="hero-visual">
           <svg class="hero-curve-v" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,0 L10,0 C10,15 25,30 25,50 C25,70 10,85 10,100 L0,100 Z" fill="#f5f5f2"></path>
+            <path d="M0,0 L6,0 C42,0 42,100 6,100 L0,100 Z" fill="#f5f5f2"></path>
           </svg>
           <svg class="hero-curve-h" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
             <path d="M0,24 C320,-10 480,100 800,68 C1100,38 1220,96 1440,62 L1440,0 L0,0 Z" fill="#f5f5f2"></path>
