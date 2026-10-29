@@ -1013,13 +1013,21 @@
     .faq-globe{
       position:absolute;
       top:50%;
-      right:-48%;
+      right:-215px;
       transform:translateY(-50%);
-      width:210%;
-      aspect-ratio:1;
+      width:500px;
+      height:500px;
       border-radius:50%;
       overflow:hidden;
       box-shadow:0 40px 90px rgba(0,0,0,.16);
+    }
+
+    @media (min-width:1280px){
+      .faq-globe{
+        right:-175px;
+        width:580px;
+        height:580px;
+      }
     }
 
     .faq-globe img{
