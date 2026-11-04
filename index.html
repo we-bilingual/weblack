@@ -415,6 +415,22 @@
       padding:90px 0 60px;
     }
 
+    .offers-faq-edge{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:-1px;
+      height:56px;
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .offers-faq-edge svg{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+
     .section-heading{
       max-width:820px;
       margin:0 auto 38px;
@@ -1353,6 +1369,10 @@
         padding:64px 0 30px;
       }
 
+      .offers-faq-edge{
+        height:28px;
+      }
+
       footer{
         flex-direction:column;
         align-items:flex-start;
@@ -1784,6 +1804,12 @@
             </li>
           </ul>
         </section>
+      </div>
+
+      <div class="offers-faq-edge" aria-hidden="true">
+        <svg viewBox="0 0 1440 56" preserveAspectRatio="none">
+          <path d="M0,28 C260,6 480,46 760,26 C1040,6 1240,44 1440,24 L1440,56 L0,56 Z" fill="var(--white)"></path>
+        </svg>
       </div>
     </section>
 
