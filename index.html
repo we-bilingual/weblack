@@ -370,14 +370,113 @@
       overflow:hidden;
       box-shadow:0 20px 45px rgba(0,0,0,.28);
       background:#000;
+      border:none;
+      padding:0;
+      display:block;
+      cursor:pointer;
+      transition:transform .2s ease, box-shadow .2s ease;
     }
 
-    .hero-video video{
+    .hero-video:hover{
+      transform:translateY(-50%) scale(1.02);
+      box-shadow:0 26px 55px rgba(0,0,0,.34);
+    }
+
+    .hero-video img{
       display:block;
       width:100%;
       height:auto;
       aspect-ratio:9/16;
       object-fit:cover;
+    }
+
+    .hero-video-play{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.28));
+    }
+
+    .hero-video-play span{
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      background:rgba(255,255,255,.96);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 8px 20px rgba(0,0,0,.3);
+    }
+
+    .hero-video-play svg{
+      width:20px;
+      height:20px;
+      margin-left:3px;
+      color:#0a0a0a;
+    }
+
+    /* VIDEO MODAL */
+    .video-modal{
+      position:fixed;
+      inset:0;
+      z-index:200;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .video-modal.is-open{display:flex}
+
+    body.video-modal-open{overflow:hidden}
+
+    .video-modal-backdrop{
+      position:absolute;
+      inset:0;
+      background:rgba(9,9,9,.85);
+    }
+
+    .video-modal-panel{
+      position:relative;
+      z-index:1;
+      width:min(92vw, 420px);
+      max-height:90vh;
+      border-radius:18px;
+      overflow:hidden;
+      background:#000;
+      box-shadow:0 30px 70px rgba(0,0,0,.45);
+    }
+
+    .video-modal-video{
+      display:block;
+      width:100%;
+      height:100%;
+      max-height:90vh;
+      aspect-ratio:9/16;
+      object-fit:contain;
+      background:#000;
+    }
+
+    .video-modal-close{
+      position:absolute;
+      top:-14px;
+      right:-14px;
+      z-index:2;
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      border:none;
+      background:#fff;
+      color:#0a0a0a;
+      font-size:20px;
+      line-height:1;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 8px 20px rgba(0,0,0,.3);
     }
 
     .hero-visual{
@@ -1554,17 +1653,14 @@
             <div class="hero-discount">70% OFF</div>
             <p class="tagline">Your English starts here.</p>
 
-            <div class="hero-video">
-              <video
-                playsinline
-                controls
-                preload="metadata"
-                poster="hero-video-poster.jpg"
-              >
-                <source src="hero-video.mp4" type="video/mp4" />
-                Seu navegador não suporta vídeo.
-              </video>
-            </div>
+            <button type="button" class="hero-video" id="heroVideoOpen" aria-label="Assistir ao vídeo da WE BLACK" aria-haspopup="dialog">
+              <img src="hero-video-poster.jpg" alt="" />
+              <span class="hero-video-play" aria-hidden="true">
+                <span>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </span>
+            </button>
 
             <div class="hero-logos" aria-label="IQL e Viajando sem Perrengue">
               <span class="hero-logo-card">
@@ -1983,6 +2079,17 @@
     </section>
   </main>
 
+  <div class="video-modal" id="heroVideoModal" aria-hidden="true">
+    <div class="video-modal-backdrop" data-video-close></div>
+    <div class="video-modal-panel" role="dialog" aria-modal="true" aria-label="Vídeo WE BLACK">
+      <button type="button" class="video-modal-close" data-video-close aria-label="Fechar vídeo">×</button>
+      <video class="video-modal-video" playsinline controls preload="none" poster="hero-video-poster.jpg">
+        <source src="hero-video.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeo.
+      </video>
+    </div>
+  </div>
+
   <script>
     (function () {
       var toggle = document.getElementById('navToggle');
@@ -2031,6 +2138,44 @@
 
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') closeAll(null);
+      });
+    })();
+
+    (function () {
+      var openBtn = document.getElementById('heroVideoOpen');
+      var modal = document.getElementById('heroVideoModal');
+      if (!openBtn || !modal) return;
+
+      var video = modal.querySelector('video');
+      var closeBtn = modal.querySelector('.video-modal-close');
+      var closers = modal.querySelectorAll('[data-video-close]');
+
+      function openModal() {
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('video-modal-open');
+        if (video) {
+          video.currentTime = 0;
+          video.play().catch(function () {});
+        }
+        if (closeBtn) closeBtn.focus();
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('video-modal-open');
+        if (video) video.pause();
+        openBtn.focus();
+      }
+
+      openBtn.addEventListener('click', openModal);
+      closers.forEach(function (el) {
+        el.addEventListener('click', closeModal);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
       });
     })();
   </script>
