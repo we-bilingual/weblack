@@ -50,6 +50,7 @@
       --red:#d73a32;
       --green:#1fc86a;
       --green-dark:#17a958;
+      --accent-blue:#1d3461;
       --radius:22px;
       --shadow:0 18px 50px rgba(0,0,0,.08);
       --serif: Georgia, "Times New Roman", serif;
@@ -364,7 +365,8 @@
       left:58%;
       top:50%;
       transform:translateY(-50%);
-      width:clamp(170px, 15vw, 230px);
+      width:clamp(190px, 16vw, 250px);
+      aspect-ratio:4/5;
       z-index:3;
       border-radius:18px;
       overflow:hidden;
@@ -382,39 +384,82 @@
       box-shadow:0 26px 55px rgba(0,0,0,.34);
     }
 
+    .hero-video:hover .hero-video-play span{
+      transform:scale(1.06);
+    }
+
     .hero-video img{
       display:block;
       width:100%;
-      height:auto;
-      aspect-ratio:9/16;
+      height:100%;
       object-fit:cover;
+      object-position:50% 18%;
+    }
+
+    .hero-video-scrim{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(9,9,9,.14) 0%, rgba(9,9,9,.04) 38%, rgba(9,9,9,.9) 100%);
     }
 
     .hero-video-play{
       position:absolute;
-      inset:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.28));
+      left:50%;
+      top:44%;
+      transform:translate(-50%,-50%);
     }
 
     .hero-video-play span{
-      width:56px;
-      height:56px;
+      width:60px;
+      height:60px;
       border-radius:50%;
-      background:rgba(255,255,255,.96);
+      background:#fff;
       display:flex;
       align-items:center;
       justify-content:center;
-      box-shadow:0 8px 20px rgba(0,0,0,.3);
+      box-shadow:0 10px 26px rgba(9,9,9,.4), 0 0 0 1px rgba(29,52,97,.18);
+      transition:transform .2s ease;
     }
 
     .hero-video-play svg{
-      width:20px;
-      height:20px;
+      width:21px;
+      height:21px;
       margin-left:3px;
-      color:#0a0a0a;
+      color:var(--accent-blue);
+    }
+
+    .hero-video-cta{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:16px;
+      text-align:center;
+      padding:0 12px;
+      pointer-events:none;
+    }
+
+    .hero-video-cta strong{
+      display:block;
+      font-family:var(--sans);
+      font-weight:800;
+      font-size:14px;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+      color:#fff;
+      text-shadow:0 2px 10px rgba(0,0,0,.4);
+    }
+
+    .hero-video-cta strong em{
+      font-style:normal;
+      color:#7ea1e0;
+    }
+
+    .hero-video-cta span{
+      display:block;
+      margin-top:4px;
+      font-size:11.5px;
+      color:rgba(255,255,255,.82);
+      text-shadow:0 2px 8px rgba(0,0,0,.4);
     }
 
     /* VIDEO MODAL */
@@ -1370,7 +1415,9 @@
       }
 
       .hero-video{
-        position:static;
+        position:relative;
+        left:auto;
+        top:auto;
         transform:none;
         width:min(62vw, 240px);
         margin:22px auto 0;
@@ -1663,12 +1710,17 @@
             <div class="hero-discount">70% OFF</div>
             <p class="tagline">Your English starts here.</p>
 
-            <button type="button" class="hero-video" id="heroVideoOpen" aria-label="Assistir ao vídeo da WE BLACK" aria-haspopup="dialog">
-              <img src="hero-video-poster.jpg" alt="" />
+            <button type="button" class="hero-video" id="heroVideoOpen" aria-label="Assistir ao vídeo da WE BLACK e ver os detalhes da oferta" aria-haspopup="dialog">
+              <img src="hero-video-cover.jpg" alt="" />
+              <span class="hero-video-scrim" aria-hidden="true"></span>
               <span class="hero-video-play" aria-hidden="true">
                 <span>
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                 </span>
+              </span>
+              <span class="hero-video-cta" aria-hidden="true">
+                <strong>Dê o <em>play</em></strong>
+                <span>para ver os detalhes</span>
               </span>
             </button>
 
