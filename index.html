@@ -460,23 +460,33 @@
     }
 
     .video-modal-close{
-      position:absolute;
-      top:-14px;
-      right:-14px;
-      z-index:2;
-      width:36px;
-      height:36px;
+      position:fixed;
+      top:20px;
+      right:20px;
+      z-index:210;
+      width:46px;
+      height:46px;
       border-radius:50%;
       border:none;
       background:#fff;
       color:#0a0a0a;
-      font-size:20px;
-      line-height:1;
       cursor:pointer;
       display:flex;
       align-items:center;
       justify-content:center;
-      box-shadow:0 8px 20px rgba(0,0,0,.3);
+      box-shadow:0 10px 26px rgba(0,0,0,.4);
+      transition:transform .15s ease, background .15s ease;
+    }
+
+    .video-modal-close:hover{
+      background:var(--green);
+      color:#fff;
+      transform:scale(1.06);
+    }
+
+    .video-modal-close svg{
+      width:18px;
+      height:18px;
     }
 
     .hero-visual{
@@ -2082,7 +2092,9 @@
   <div class="video-modal" id="heroVideoModal" aria-hidden="true">
     <div class="video-modal-backdrop" data-video-close></div>
     <div class="video-modal-panel" role="dialog" aria-modal="true" aria-label="Vídeo WE BLACK">
-      <button type="button" class="video-modal-close" data-video-close aria-label="Fechar vídeo">×</button>
+      <button type="button" class="video-modal-close" data-video-close aria-label="Fechar vídeo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="M6 6l12 12"/></svg>
+      </button>
       <video class="video-modal-video" playsinline controls preload="none" poster="hero-video-poster.jpg">
         <source src="hero-video.mp4" type="video/mp4" />
         Seu navegador não suporta vídeo.
