@@ -183,7 +183,7 @@
       position:relative;
       display:flex;
       align-items:stretch;
-      min-height:560px;
+      min-height:500px;
     }
 
     .hero-content{
@@ -370,10 +370,10 @@
 
     .hero-video{
       position:absolute;
-      left:58%;
+      right:max(20px, calc((100vw - 1180px) / 2));
       top:50%;
       transform:translateY(-50%);
-      width:clamp(190px, 16vw, 250px);
+      width:clamp(260px, 22vw, 340px);
       aspect-ratio:4/5;
       z-index:3;
       border-radius:18px;
@@ -542,55 +542,6 @@
       height:18px;
     }
 
-    .hero-visual{
-      position:relative;
-      flex:0 0 44%;
-      overflow:hidden;
-    }
-
-    .hero-visual img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:100% 50%;
-      display:block;
-    }
-
-    .hero-curve-v,
-    .hero-curve-v-line{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      z-index:1;
-      pointer-events:none;
-    }
-
-    .hero-curve-v-line{
-      z-index:2;
-    }
-
-    .hero-curve-bottom,
-    .hero-curve-bottom-line{
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      width:100%;
-      height:120px;
-      z-index:1;
-      pointer-events:none;
-    }
-
-    .hero-curve-bottom-line{
-      z-index:2;
-    }
-
-    .hero-curve-h,
-    .hero-curve-h-line,
-    .hero-curve-mobile-bottom{
-      display:none;
-    }
 
     .eyebrow{
       display:flex;
@@ -648,7 +599,7 @@
       position:relative;
       background:var(--black);
       color:#fff;
-      padding:76px 0;
+      padding:60px 0;
     }
 
     .experience .eyebrow{color:#fff}
@@ -656,7 +607,7 @@
 
     .experience-head{
       max-width:680px;
-      margin:0 auto 50px;
+      margin:0 auto 40px;
       text-align:center;
     }
 
@@ -722,7 +673,7 @@
     .courses-preview{
       position:relative;
       background:var(--white);
-      padding:76px 0;
+      padding:60px 0 64px;
     }
 
     .preview-grid{
@@ -1314,7 +1265,7 @@
     }
 
     .faq-content{
-      flex:1 1 60%;
+      flex:1 1 100%;
       min-width:0;
       padding-left:max(20px, calc((100vw - 1180px) / 2));
       padding-right:24px;
@@ -1322,6 +1273,7 @@
     }
 
     .faq-head{
+      max-width:720px;
       margin-bottom:14px;
     }
 
@@ -1336,6 +1288,7 @@
     }
 
     .faq-list{
+      max-width:720px;
       border-top:1px solid var(--line);
     }
 
@@ -1386,68 +1339,6 @@
       max-width:560px;
     }
 
-    .faq-visual{
-      flex:0 0 36%;
-      min-width:0;
-    }
-
-    .faq-globe-wrap{
-      position:absolute;
-      bottom:0;
-      right:0;
-      width:33%;
-      height:600px;
-      overflow:hidden;
-      pointer-events:none;
-      z-index:1;
-    }
-
-    .faq-globe{
-      position:absolute;
-      bottom:-15px;
-      right:-165px;
-      width:460px;
-      height:460px;
-      border-radius:50%;
-      overflow:hidden;
-      box-shadow:0 30px 70px rgba(0,0,0,.22);
-    }
-
-    @media (min-width:1280px){
-      .faq-globe{
-        right:-150px;
-        bottom:-55px;
-        width:500px;
-        height:500px;
-      }
-    }
-
-    .faq-globe img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:56% 44%;
-      display:block;
-    }
-
-    .faq-globe::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      border-radius:50%;
-      background:
-        radial-gradient(ellipse 50% 65% at 28% 26%, rgba(255,226,190,.4), transparent 55%),
-        radial-gradient(ellipse 58% 82% at 70% 80%, rgba(0,0,0,.55), transparent 62%);
-    }
-
-    .faq-lines{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      filter:drop-shadow(0 0 1px rgba(255,255,255,.4));
-    }
-
     .faq-bottom-curve{
       position:relative;
       z-index:3;
@@ -1464,74 +1355,237 @@
     }
 
     /* FAQ CTA */
-    .final-cta{
-      position:relative;
-      background:#090909;
-      color:#fff;
-      padding:36px 0 26px;
-      overflow:hidden;
-    }
-
-    .final-cta::before{
-      content:"";
-      position:absolute;
-      left:-12%;
-      bottom:-30%;
-      width:55%;
-      height:150%;
-      background:radial-gradient(circle, rgba(196,42,30,.26), transparent 65%);
-      pointer-events:none;
-    }
-
-    .final-cta .eyebrow::after{display:none}
-
-    .final-box{
-      position:relative;
-      z-index:1;
-      text-align:center;
-      max-width:760px;
-      margin:0 auto;
-    }
-
-    .final-box h2{
-      font-family:var(--serif);
-      font-size:clamp(28px,3.4vw,40px);
-      line-height:1.1;
-      font-weight:500;
-      margin:0 0 10px;
-    }
-
-    .final-box p{
-      color:#cfcfcf;
-      font-size:15px;
-      margin:0 auto 18px;
-      max-width:560px;
-    }
-
-    .final-box .btn{
-      min-height:46px;
-      padding:12px 24px;
-      font-size:14px;
-    }
-
-    footer{
-      position:relative;
-      z-index:1;
-      margin-top:32px;
-      padding-top:18px;
-      border-top:1px solid rgba(255,255,255,.12);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
+    /* FOOTER */
+    .site-footer{
+      background:var(--black);
       color:#9f9f9f;
-      font-size:12px;
+      padding:28px 0;
     }
 
-    footer .brand{font-size:13px}
+    .site-footer-inner{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      text-align:center;
+    }
+
+    .site-footer-brand{
+      font-weight:800;
+      font-size:13px;
+      letter-spacing:.08em;
+      color:#fff;
+    }
+
+    .site-footer-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .site-footer-link{
+      background:none;
+      border:none;
+      padding:0;
+      font:inherit;
+      font-size:12.5px;
+      color:#cfcfcf;
+      cursor:pointer;
+      transition:color .15s ease;
+    }
+
+    .site-footer-link:hover{color:#fff}
+
+    .site-footer-sep{color:#4a4a4a; font-size:12px;}
+
+    .site-footer-copy{
+      margin:0;
+      font-size:11.5px;
+      line-height:1.5;
+      color:#7a7a7a;
+      max-width:520px;
+    }
+
+    /* FLOATING WHATSAPP */
+    .whatsapp-float{
+      position:fixed;
+      right:max(18px, env(safe-area-inset-right));
+      bottom:max(18px, env(safe-area-inset-bottom));
+      z-index:90;
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      background:var(--green);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 10px 26px rgba(0,0,0,.3);
+      transition:transform .15s ease, background .15s ease;
+    }
+
+    .whatsapp-float:hover{
+      background:var(--green-dark);
+      transform:scale(1.06);
+    }
+
+    .whatsapp-float svg{
+      width:28px;
+      height:28px;
+    }
+
+    /* LEGAL MODAL */
+    .legal-modal{
+      position:fixed;
+      inset:0;
+      z-index:200;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .legal-modal.is-open{display:flex}
+
+    body.legal-modal-open{overflow:hidden}
+
+    .legal-modal-backdrop{
+      position:absolute;
+      inset:0;
+      background:rgba(9,9,9,.78);
+    }
+
+    .legal-modal-panel{
+      position:relative;
+      z-index:1;
+      width:min(92vw, 640px);
+      max-height:85vh;
+      display:flex;
+      flex-direction:column;
+      background:#fff;
+      border-radius:24px;
+      box-shadow:0 30px 70px rgba(0,0,0,.45);
+      padding:34px;
+    }
+
+    .legal-modal-close{
+      position:fixed;
+      top:20px;
+      right:20px;
+      z-index:210;
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      border:none;
+      background:#fff;
+      color:#0a0a0a;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 10px 26px rgba(0,0,0,.4);
+      transition:transform .15s ease, background .15s ease, color .15s ease;
+    }
+
+    .legal-modal-close:hover{
+      background:var(--blue);
+      color:#fff;
+      transform:scale(1.06);
+    }
+
+    .legal-modal-close svg{width:18px; height:18px;}
+
+    .legal-modal-head{
+      margin-bottom:20px;
+    }
+
+    .legal-modal-eyebrow{
+      display:block;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:11px;
+      font-weight:800;
+      color:var(--blue);
+      margin-bottom:8px;
+    }
+
+    .legal-modal-head h3{
+      font-family:var(--serif-display);
+      font-size:clamp(20px,2.4vw,26px);
+      font-weight:500;
+      margin:0;
+      color:var(--text);
+    }
+
+    .legal-tabs{
+      display:flex;
+      gap:8px;
+      margin-bottom:22px;
+      border-bottom:1px solid var(--line);
+      padding-bottom:16px;
+    }
+
+    .legal-tab{
+      border:none;
+      background:var(--off);
+      color:var(--muted);
+      font-weight:700;
+      font-size:12.5px;
+      padding:9px 16px;
+      border-radius:999px;
+      cursor:pointer;
+      transition:background .15s ease, color .15s ease;
+    }
+
+    .legal-tab[aria-selected="true"]{
+      background:var(--blue);
+      color:#fff;
+    }
+
+    .legal-modal-body{
+      overflow-y:auto;
+      padding-right:4px;
+    }
+
+    .legal-panel h4{
+      font-family:var(--serif-display);
+      font-size:18px;
+      font-weight:500;
+      margin:0 0 16px;
+      color:var(--text);
+    }
+
+    .legal-panel p{
+      font-size:13.5px;
+      line-height:1.65;
+      color:var(--muted);
+      margin:0 0 14px;
+    }
+
+    .legal-panel p strong{color:var(--text)}
+
+    .legal-panel a{color:var(--blue)}
+
+    .legal-updated{
+      font-size:12px;
+      color:#9a9a9a;
+      margin-top:18px;
+    }
 
     @media (max-width: 860px){
       .container{width:min(100% - 28px, 720px)}
+
+      .whatsapp-float{
+        width:48px;
+        height:48px;
+        right:max(14px, env(safe-area-inset-right));
+        bottom:max(14px, env(safe-area-inset-bottom));
+      }
+
+      .whatsapp-float svg{
+        width:24px;
+        height:24px;
+      }
 
       .nav{
         min-height:66px;
@@ -1586,6 +1640,7 @@
       .hero-video{
         position:relative;
         left:auto;
+        right:auto;
         top:auto;
         transform:none;
         width:min(62vw, 240px);
@@ -1642,50 +1697,6 @@
         line-height:1.25;
       }
 
-      .hero-visual{
-        flex:none;
-        width:100%;
-        height:64vw;
-        min-height:250px;
-        max-height:350px;
-      }
-
-      .hero-visual img{
-        object-position:92% 36%;
-      }
-
-      .hero-curve-v,
-      .hero-curve-v-line,
-      .hero-curve-bottom,
-      .hero-curve-bottom-line{
-        display:none;
-      }
-
-      .hero-curve-h,
-      .hero-curve-h-line{
-        display:block;
-        position:absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:38px;
-        z-index:2;
-      }
-
-      .hero-curve-h-line{
-        z-index:3;
-      }
-
-      .hero-curve-mobile-bottom{
-        display:block;
-        position:absolute;
-        left:0;
-        right:0;
-        bottom:0;
-        width:100%;
-        height:44px;
-        z-index:2;
-      }
 
       .cards{
         grid-template-columns:1fr;
@@ -1778,11 +1789,6 @@
         height:28px;
       }
 
-      footer{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
       .faq{
         padding-top:24px;
       }
@@ -1796,42 +1802,11 @@
       .faq-content{
         padding-left:0;
         padding-right:0;
-        padding-bottom:440px;
+        padding-bottom:22px;
       }
 
       .faq-head{
         margin-bottom:12px;
-      }
-
-      .faq-visual{
-        display:none;
-      }
-
-      .faq-globe-wrap{
-        top:auto;
-        bottom:56px;
-        left:auto;
-        right:0;
-        width:300px;
-        height:420px;
-        z-index:1;
-      }
-
-      .faq-globe{
-        width:410px;
-        height:410px;
-        bottom:-40px;
-        right:-140px;
-        box-shadow:none;
-      }
-
-      .faq-line-secondary{
-        display:none;
-      }
-
-      .faq-lines{
-        transform:scale(.4);
-        transform-origin:bottom right;
       }
 
       .faq-bottom-curve{
@@ -1852,7 +1827,6 @@
       .section-heading{margin-bottom:28px}
       .section-heading p{font-size:16px}
       .trait-row{grid-template-columns:repeat(2,1fr)}
-      .final-cta{padding-top:30px}
     }
   </style>
 </head>
@@ -1952,35 +1926,6 @@
           </div>
         </div>
 
-        <div class="hero-visual">
-          <svg class="hero-curve-v" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,0 L16,0 C50,6 52,38 52,50 C52,62 44,92 10,100 L0,100 Z" fill="#f5f5f2"></path>
-          </svg>
-          <svg class="hero-curve-v-line" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M21,0 C55,6 57,38 57,50 C57,62 49,92 15,100" fill="none" stroke="rgba(10,10,10,.14)" stroke-width=".4"></path>
-            <path d="M27,0 C61,6 63,38 63,50 C63,62 55,92 21,100" fill="none" stroke="rgba(10,10,10,.08)" stroke-width=".3"></path>
-          </svg>
-
-          <svg class="hero-curve-h" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,10 C480,70 960,-10 1440,40 L1440,0 L0,0 Z" fill="#f5f5f2"></path>
-          </svg>
-          <svg class="hero-curve-h-line" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,20 C480,80 960,0 1440,50" fill="none" stroke="rgba(10,10,10,.18)" stroke-width="2"></path>
-          </svg>
-
-          <img src="hero-bg.jpg" alt="Notebook, passaporte e janela do avião ao pôr do sol" />
-
-          <svg class="hero-curve-bottom" viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,100 L0,42 C130,8 270,76 400,34 L400,100 Z" fill="#f5f5f2"></path>
-          </svg>
-          <svg class="hero-curve-bottom-line" viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,34 C130,0 270,68 400,26" fill="none" stroke="rgba(10,10,10,.16)" stroke-width=".6"></path>
-          </svg>
-
-          <svg class="hero-curve-mobile-bottom" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M0,120 L0,64 C480,16 960,100 1440,52 L1440,120 Z" fill="#f5f5f2"></path>
-          </svg>
-        </div>
       </div>
     </section>
 
@@ -2347,7 +2292,6 @@
           </div>
         </div>
 
-        <div class="faq-visual" aria-hidden="true"></div>
       </div>
 
       <div class="faq-bottom-curve" aria-hidden="true">
@@ -2359,44 +2303,109 @@
         </svg>
       </div>
       </section>
-
-      <div class="faq-globe-wrap" aria-hidden="true">
-        <div class="faq-globe">
-          <img src="faq-map.jpg" alt="" />
-        </div>
-        <svg class="faq-lines" viewBox="0 0 560 700" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M150,230 C110,320 125,430 220,520 C250,548 270,562 290,580" fill="none" stroke="rgba(150,138,118,.14)" stroke-width=".6" stroke-dasharray="5 11" stroke-linecap="round"></path>
-          <path class="faq-line-secondary" d="M205,190 C170,270 180,380 255,460" fill="none" stroke="rgba(150,138,118,.09)" stroke-width=".5" stroke-dasharray="4 13" stroke-linecap="round"></path>
-        </svg>
-      </div>
     </div>
 
-    <section class="final-cta">
-      <div class="container">
-        <div class="final-box">
-          <div class="eyebrow" style="justify-content:center"><span class="wb-badge">WE BLACK</span></div>
-          <h2>Ainda tem alguma dúvida?</h2>
-          <p>
-            Fale com a nossa equipe e entenda qual opção faz mais sentido para você.
-          </p>
+  </main>
 
-          <a
-            class="btn btn-green"
-            href="https://wa.me/5544988271830?text=Ol%C3%A1%21%20Vim%20pela%20WE%20BLACK%20e%20gostaria%20de%20entender%20qual%20curso%20faz%20mais%20sentido%20para%20mim."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Falar no WhatsApp →
-          </a>
+  <footer class="site-footer">
+    <div class="container site-footer-inner">
+      <div class="site-footer-brand">WE BILINGUAL</div>
+      <nav class="site-footer-links" aria-label="Links institucionais">
+        <button type="button" class="site-footer-link" data-open-legal="privacy">Política de Privacidade</button>
+        <span class="site-footer-sep" aria-hidden="true">|</span>
+        <button type="button" class="site-footer-link" data-open-legal="terms">Termos de Serviço</button>
+      </nav>
+      <p class="site-footer-copy">© 2026 We Bilingual — NP Treinamentos Ltda., CNPJ 39.982.896/0001-97. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/5544988271830?text=Ol%C3%A1%21%20Vim%20pela%20WE%20BLACK%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2.1c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.39 1.26 4.82L2 22l5.3-1.39a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.44 9.9-9.9s-4.45-9.81-9.91-9.81zm0 1.67c4.56 0 8.24 3.7 8.24 8.24 0 4.56-3.71 8.27-8.25 8.27a8.3 8.3 0 0 1-4.21-1.15l-.31-.18-3.14.8.84-3.05-.2-.32a8.18 8.18 0 0 1-1.26-4.38c0-4.56 3.72-8.23 8.29-8.23zM8.5 7.07c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.67 2.69 4.15 3.67 2.05.81 2.47.65 2.92.61.45-.04 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42z"/></svg>
+  </a>
+
+  <div class="legal-modal" id="legalModal" aria-hidden="true">
+    <div class="legal-modal-backdrop" data-legal-close></div>
+    <div class="legal-modal-panel" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+      <button type="button" class="legal-modal-close" data-legal-close aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="M6 6l12 12"/></svg>
+      </button>
+
+      <div class="legal-modal-head">
+        <span class="legal-modal-eyebrow">Privacidade e uso do site</span>
+        <h3 id="legalModalTitle">Política de Privacidade e Termos de Serviço</h3>
+      </div>
+
+      <div class="legal-tabs" role="tablist">
+        <button type="button" class="legal-tab" data-legal-tab="privacy" role="tab" aria-selected="true">Política de Privacidade</button>
+        <button type="button" class="legal-tab" data-legal-tab="terms" role="tab" aria-selected="false">Termos de Serviço</button>
+      </div>
+
+      <div class="legal-modal-body">
+        <div class="legal-panel" data-legal-panel="privacy">
+          <h4>Política de Privacidade e LGPD</h4>
+
+          <p><strong>1. Quem trata os dados</strong><br />
+          A WE BLACK é uma campanha da We Bilingual, marca sob a qual a NP Treinamentos Ltda., CNPJ 39.982.896/0001-97, é responsável pelo tratamento dos dados pessoais coletados nesta página e nos canais de atendimento vinculados a ela.</p>
+
+          <p><strong>2. Dados coletados</strong><br />
+          Podemos coletar dados fornecidos no processo de compra (nome, e-mail, telefone) e informações de navegação e interação com esta página.</p>
+
+          <p><strong>3. Finalidade do tratamento</strong><br />
+          Os dados são usados para processar sua compra, liberar o acesso aos cursos, prestar atendimento, mensurar o desempenho de campanhas publicitárias e melhorar a experiência da página.</p>
+
+          <p><strong>4. Tecnologias utilizadas</strong><br />
+          Esta página utiliza o Google Analytics (GA4) para análise de navegação e o Meta Pixel (Facebook/Instagram) para mensuração de campanhas publicitárias. A compra e o acesso aos cursos são processados pela Hotmart, plataforma responsável pelo pagamento e pela entrega do conteúdo.</p>
+
+          <p><strong>5. Compartilhamento</strong><br />
+          Os dados podem ser processados pelos fornecedores citados acima (Hotmart, Google, Meta), sempre de acordo com a finalidade informada.</p>
+
+          <p><strong>6. Cookies</strong><br />
+          Esta página pode utilizar cookies para funcionamento e mensuração. Caso um banner de consentimento seja implementado, suas preferências serão respeitadas conforme a finalidade de cada cookie.</p>
+
+          <p><strong>7. Seus direitos</strong><br />
+          Nos termos da Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você pode solicitar confirmação de tratamento, acesso, correção, anonimização, eliminação ou informações sobre o compartilhamento dos seus dados.</p>
+
+          <p><strong>8. Contato</strong><br />
+          Para dúvidas ou solicitações sobre seus dados, entre em contato pelo e-mail <a href="mailto:webilingualsolutions@gmail.com">webilingualsolutions@gmail.com</a> ou pelo WhatsApp (44) 98827-1830.</p>
+
+          <p class="legal-updated">Última revisão: novembro de 2026.</p>
         </div>
 
-        <footer>
-          <div class="brand">WE BILINGUAL</div>
-          <div><span class="wb-badge">WE BLACK</span> · Oferta válida até 30 de novembro</div>
-        </footer>
+        <div class="legal-panel" data-legal-panel="terms" hidden>
+          <h4>Termos de Serviço</h4>
+
+          <p><strong>1. Aceitação</strong><br />
+          Ao acessar esta página e realizar uma compra, você concorda com estes Termos de Serviço.</p>
+
+          <p><strong>2. Objeto</strong><br />
+          Esta página apresenta a oferta WE BLACK, com condições especiais para os cursos digitais IQL — Inglês em Qualquer Lugar e Viajando sem Perrengue, produzidos e comercializados pela We Bilingual (NP Treinamentos Ltda.).</p>
+
+          <p><strong>3. Compra e acesso</strong><br />
+          As compras são processadas pela Hotmart. O acesso aos cursos é liberado por e-mail após a confirmação do pagamento, conforme as instruções enviadas pela plataforma.</p>
+
+          <p><strong>4. Condições comerciais</strong><br />
+          Preços, descontos, prazos e formas de pagamento podem ser alterados sem aviso prévio. A condição vigente é sempre a exibida nesta página no momento da compra.</p>
+
+          <p><strong>5. Garantia</strong><br />
+          Toda compra possui 7 dias de garantia, conforme o Código de Defesa do Consumidor, a contar da data de confirmação do pagamento.</p>
+
+          <p><strong>6. Propriedade intelectual</strong><br />
+          Os conteúdos dos cursos, textos, identidade visual e materiais desta página são protegidos por direitos autorais e não podem ser reproduzidos ou redistribuídos sem autorização.</p>
+
+          <p><strong>7. Atendimento</strong><br />
+          Dúvidas sobre a compra, o acesso aos cursos ou estes termos podem ser esclarecidas pelo WhatsApp (44) 98827-1830 ou pelo e-mail <a href="mailto:webilingualsolutions@gmail.com">webilingualsolutions@gmail.com</a>.</p>
+
+          <p class="legal-updated">Última revisão: novembro de 2026.</p>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
 
   <div class="video-modal" id="heroVideoModal" aria-hidden="true">
     <div class="video-modal-backdrop" data-video-close></div>
@@ -2491,6 +2500,64 @@
       }
 
       openBtn.addEventListener('click', openModal);
+      closers.forEach(function (el) {
+        el.addEventListener('click', closeModal);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+      });
+    })();
+
+    (function () {
+      var openers = document.querySelectorAll('[data-open-legal]');
+      var modal = document.getElementById('legalModal');
+      if (!openers.length || !modal) return;
+
+      var closeBtn = modal.querySelector('.legal-modal-close');
+      var closers = modal.querySelectorAll('[data-legal-close]');
+      var tabs = modal.querySelectorAll('.legal-tab');
+      var panels = modal.querySelectorAll('.legal-panel');
+      var lastFocused = null;
+
+      function showTab(name) {
+        tabs.forEach(function (t) {
+          t.setAttribute('aria-selected', String(t.getAttribute('data-legal-tab') === name));
+        });
+        panels.forEach(function (p) {
+          p.hidden = p.getAttribute('data-legal-panel') !== name;
+        });
+        modal.querySelector('.legal-modal-body').scrollTop = 0;
+      }
+
+      function openModal(tabName) {
+        lastFocused = document.activeElement;
+        showTab(tabName || 'privacy');
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('legal-modal-open');
+        if (closeBtn) closeBtn.focus();
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('legal-modal-open');
+        if (lastFocused) lastFocused.focus();
+      }
+
+      openers.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openModal(btn.getAttribute('data-open-legal'));
+        });
+      });
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          showTab(tab.getAttribute('data-legal-tab'));
+        });
+      });
+
       closers.forEach(function (el) {
         el.addEventListener('click', closeModal);
       });
